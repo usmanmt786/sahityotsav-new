@@ -1,6 +1,6 @@
 import { FaList } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { MdChecklistRtl, MdPerson } from "react-icons/md";
+import { MdChecklistRtl, MdOutlineImageAspectRatio, MdPerson } from "react-icons/md";
 import { TbPodium } from "react-icons/tb";
 
 const MENU_ITEMS = [
@@ -20,6 +20,12 @@ const MENU_ITEMS = [
         name: "Results",
         to: "",
         icon: <MdChecklistRtl />
+
+    },
+    {
+        name: "Posters Configs",
+        to: "",
+        icon: <MdOutlineImageAspectRatio />
 
     },
     {
