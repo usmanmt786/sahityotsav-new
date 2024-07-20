@@ -6,3 +6,97 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model config {
+  id         Int      @id @default(autoincrement())
+  name       String
+  value      String
+  edit_type  String   @default("input")
+  added_at   DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model user {
+  id      Int    @id @default(autoincrement())
+  ziqx_id String
+  name    String
+  role    String @default("user")
+
+  added_at      DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  delete_status Boolean  @default(false)
+}
+
+model user_invitation {
+  id            Int      @id @default(autoincrement())
+  email         String
+  role          String   @default("user")
+  added_at      DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  delete_status Boolean  @default(false)
+}
+
+model category {
+  id            Int       @id @default(autoincrement())
+  name          String
+  description   String?
+  added_at      DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  delete_status Boolean   @default(false)
+  program       program[]
+}
+
+model stage {
+  id            Int       @id @default(autoincrement())
+  name          String
+  location      String?
+  description   String?
+  added_at      DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  delete_status Boolean   @default(false)
+  program       program[]
+}
+
+model program {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  category           category @relation(fields: [categoryId], references: [id])
+  stage              stage?   @relation(fields: [stageId], references: [id])
+  time               String?
+  description        String?
+  no_of_participants Int      @default(1)
+  type               String   @default("individual")
+
+  added_at      DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  delete_status Boolean  @default(false)
+  categoryId    Int
+  stageId       Int?
+}
+
+model participant {
+  id          Int    @id @default(autoincrement())
+  name        String
+  chest_no    String
+  father_name String
+  place       String
+
+  added_at      DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  delete_status Boolean  @default(false)
+}
+
+model program_participant {
+  id             Int     @id @default(autoincrement())
+  program_id     Int
+  participant_id Int
+  code_letter    String?
+  win_place      Int     @default(0)
+  score          Int     @default(0)
+  grade          String?
+  is_attended    Boolean @default(false)
+
+  added_at      DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  delete_status Boolean  @default(false)
+}

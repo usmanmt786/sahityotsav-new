@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.fullcenter{
+    @apply flex flex-col justify-center items-center;
+}
+
+.commonwidth{
+    @apply w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto;
+}

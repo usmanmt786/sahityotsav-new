@@ -4,5 +4,9 @@ export default interface ConfigType{
     typeName:string;
     venue: string;
     venueDates: string;
+    // Site settings
+    site:{
+        primaryColor: string;
+    }
 
 }
