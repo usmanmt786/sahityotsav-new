@@ -2,6 +2,7 @@ import Link from "next/link";
 import AOSClient from "../common/AOSClient";
 import APPCONFIGS from "@/configs";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import Footer from "../common/Footer";
 
 const AdminLayout = (props:any) => {
    
@@ -22,6 +23,7 @@ const AdminLayout = (props:any) => {
                 </nav>
             </section>
             {props.children}
+            <Footer/>
         </div>
     );
 }
