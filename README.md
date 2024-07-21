@@ -23,6 +23,8 @@ git clone https://github.com/fathah/sahityotsav.git
 Authentication is required for Admin access and dashboard. 
 For easier implementation this project uses *ZIQX AUTH*.
 
+![image](https://github.com/user-attachments/assets/8e649d42-213c-4d09-af4c-b75a0adac65f)
+
 Ziqx Auth can be easily implemented to this project. All you need is `appkey` which we can get from [Ziqx Developers Console](http://developers.ziqx.cc/)
 Copy th key and paste it in `configs.ts` under `ziqx-->appkey`
 
