@@ -8,6 +8,7 @@ const APPCONFIGS:ConfigType = {
     venueDates:"August 10, 11, 12",
     style:{
         primaryColor:"#C7D9A7",
+        primaryDark:"#7D9C43",
         heroColor:"#30352D"
     },
     socials:{

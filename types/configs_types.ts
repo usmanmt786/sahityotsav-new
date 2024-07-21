@@ -7,6 +7,7 @@ export default interface ConfigType{
     // Site settings
     style:{
         primaryColor: string;
+        primaryDark: string;
         heroColor?: string;
     },
     socials?: {

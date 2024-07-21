@@ -8,9 +8,9 @@ const GuestLayout = (props:any) => {
     return (
         <div>
             <AOSClient/>
-            <section className="bg-primary py-4 text-white" data-aos="fade-down">
+            <section className="bg-primaryDark py-4 text-white" data-aos="fade-down">
                 <nav className="commonwidth flex items-center justify-between">
-                    <Link href={`/`}><img src="/images/logo.svg" className="h-14" alt="" /></Link>
+                    <Link href={`/`}><img src="/images/icon-w.svg" className="h-14" alt="" /></Link>
                     <GuestNavLinks/>
                 </nav>
             </section>

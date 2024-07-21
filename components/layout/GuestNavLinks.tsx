@@ -15,7 +15,7 @@ const GuestNavLinks = () => {
                     <Link 
                     href={item.link} 
                     key={item.name} 
-                    className="text-black hover:-translate-y-1 duration-300">
+                    className="text-white hover:-translate-y-1 duration-300">
                         {item.name}
                     </Link>
                 ))

@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
    extend:{
     colors:{
-      primary: APPCONFIGS.style.primaryColor
+      primary: APPCONFIGS.style.primaryColor,
+      primaryDark: APPCONFIGS.style.primaryDark
      }
    }
   },
