@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    env:{
+        ZIQX_APPKEY: process.env.ZIQX_APPKEY
+    }
+};
 
 export default nextConfig;
