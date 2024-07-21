@@ -5,8 +5,15 @@ export default interface ConfigType{
     venue: string;
     venueDates: string;
     // Site settings
-    site:{
+    style:{
         primaryColor: string;
+        heroColor?: string;
+    },
+    socials?: {
+        youtube?: string;
+        facebook?: string;
+        instagram?: string;
+        twitter?: string;
     }
 
 }

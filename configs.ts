@@ -6,8 +6,13 @@ const APPCONFIGS:ConfigType = {
     typeName:"Kannur",
     venue:"Taliparamba",
     venueDates:"August 10, 11, 12",
-    site:{
-        primaryColor:"#C7D9A7"
+    style:{
+        primaryColor:"#C7D9A7",
+        heroColor:"#30352D"
+    },
+    socials:{
+        youtube:"dsf",
+        facebook:"fefs"
     }
 };
 

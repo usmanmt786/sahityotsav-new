@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AOSClient from "../common/AOSClient";
 import GuestNavLinks from "./GuestNavLinks";
+import Footer from "../common/Footer";
 
 const GuestLayout = (props:any) => {
    
@@ -14,6 +15,7 @@ const GuestLayout = (props:any) => {
                 </nav>
             </section>
             {props.children}
+            <Footer/>
         </div>
     );
 }
