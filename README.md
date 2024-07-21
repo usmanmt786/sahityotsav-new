@@ -1,7 +1,9 @@
 # Sahityotsav Management System
 
 This application is an open-source version of Sahityotsav management software. 
-Commercial use is strictly prohibited.
+
+Not for commercial purpose
+[Check usage License](#license)
 
 ## Setup
 This application is build on top of `Node.js` backend and `Next.js` as frontend.
