@@ -15,6 +15,10 @@ export default interface ConfigType{
         facebook?: string;
         instagram?: string;
         twitter?: string;
+    },
+    ziqx :{
+        appkey: string;
+        
     }
 
 }

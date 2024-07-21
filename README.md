@@ -6,17 +6,25 @@ This application is an open-source of Sahityotsav management software.
 This application is build on top of `Node.js` backend and `Next.js` as frontend.
 You can clone this repo and setup a new server.
 
-### 1. Clone the Repo
+## 1. Clone the Repo
 ```
 git clone https://github.com/fathah/sahityotsav.git
 ```
 
-### 2. Setup the Database
+### NOTE: This project is based on a config file `config.ts` located in the root directory. Most of the edits can be done in the config file. For major changes you may modify the source code
+
+
+## 2. Setup the Database
 * The project uses Prisma ORM with `sqlite` as default database. You can change by modifying the `prisma.schema` file.
 
 * Create a `.env` file and define `DATABASE_URL` variable.
 
+## 3. Authentication
+Authentication is required for Admin access and dashboard. 
+For easier implementation this project uses *ZIQX AUTH*.
 
+Ziqx Auth can be easily implemented to this project. All you need is `appkey` which we can get from [Ziqx Developers Console](http://developers.ziqx.cc/)
+Copy th key and paste it in `configs.ts` under `ziqx-->appkey`
 
 ## FAQ
 * **Supports Serverless?**<br/>

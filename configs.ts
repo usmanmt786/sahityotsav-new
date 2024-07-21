@@ -4,7 +4,7 @@ const APPCONFIGS:ConfigType = {
     type: "district",
     year: 2024,
     typeName:"Kannur",
-    venue:"Taliparamba",
+    venue:"Thalassery",
     venueDates:"August 10, 11, 12",
     style:{
         primaryColor:"#C7D9A7",
@@ -14,6 +14,10 @@ const APPCONFIGS:ConfigType = {
     socials:{
         youtube:"dsf",
         facebook:"fefs"
+    },
+    ziqx:{
+        appkey:process.env.ZIQX_APPKEY!
+       
     }
 };
 
