@@ -1,31 +1,24 @@
 import { FaList } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { MdChecklistRtl, MdOutlineImageAspectRatio, MdPerson } from "react-icons/md";
+import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdPerson } from "react-icons/md";
 import { TbPodium } from "react-icons/tb";
 
 const MENU_ITEMS = [
     {
+        name: "Categories",
+        to: "/admin/categories",
+        icon: <MdCategory />
+    },
+    {
         name: "Programs",
-        to: "",
-        icon: <MdPerson />
+        to: "/admin/programs",
+        icon: <MdOutlineEventSeat />
     },
 
     {
         name: "Participants",
         to: "",
         icon:<FaPeopleGroup />
-
-    },
-    {
-        name: "Results",
-        to: "",
-        icon: <MdChecklistRtl />
-
-    },
-    {
-        name: "Posters Configs",
-        to: "",
-        icon: <MdOutlineImageAspectRatio />
 
     },
     {
@@ -40,6 +33,20 @@ const MENU_ITEMS = [
         icon:<TbPodium />
 
     },
+    {
+        name: "Results",
+        to: "",
+        icon: <MdChecklistRtl />
+
+    },
+    {
+        name: "Posters",
+        to: "",
+        icon: <MdOutlineImageAspectRatio />
+
+    },
+   
+   
 ];
 
 export { MENU_ITEMS };

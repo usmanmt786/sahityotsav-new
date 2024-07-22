@@ -7,12 +7,24 @@ import APPCONFIGS from "@/configs";
 import { isDev } from "@/functions/utils/debug";
 
 
-const SaveToken = ({token}:{ token:any}) => {
+const SaveToken = ({redir,token}:{redir:any, token:any}) => {
     useEffect(() => {
-
+        if(redir){            
+            Cookies.set("redir", redir);
+        }
         if (token) {
             Cookies.set("token", token);
-            window.location.replace("/admin");
+
+            const redirData = Cookies.get("redir");           
+            
+            if(redirData){
+                window.location.replace(redirData);
+                setTimeout(()=>Cookies.remove("redir"), 1000);
+            }else{
+                window.location.replace("/admin");
+            }
+
+
         } else {
             setTimeout(() => {
                 const auth = new ZiqxAuth();

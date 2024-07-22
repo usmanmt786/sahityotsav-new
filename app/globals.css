@@ -11,3 +11,11 @@
 .commonwidth{
     @apply w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto;
 }
+
+.p-dialog .p-dialog-content:last-of-type{
+    border-radius: 20px !important;
+  }
+  
+  .p-dialog{
+    border: none !important;
+  }

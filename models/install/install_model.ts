@@ -1,5 +1,6 @@
 import { COMMON_CATEGORIES, COMMON_PROGRAMS } from "@/data/prefill";
 import prisma from "@/data/prisma";
+import { ConfigsModel } from "../configs/configs_model";
 
 export default class InstallModel {
     static async isInstalled():Promise<boolean> {
@@ -14,6 +15,7 @@ export default class InstallModel {
 
 
     static async install() {
+       try {
         const isDone = await this.isInstalled();
         if(!isDone){
              await prisma.category.createMany({
@@ -24,16 +26,36 @@ export default class InstallModel {
                 data: COMMON_PROGRAMS
             });
 
-            await prisma.config.create({
-                data: {
-                    name: "is_installed",
-                    value: "true"
-                }
-            })
+            await ConfigsModel.updateConfig("is_installed", "true");
+         
             return {code:0, message:"Software installed"}
                }else{
             return {code:1, message:"Software is already installed"}
         }
+       } catch (error) {
+        console.error(error);
+        
+        return {code:1, message:"Error installing software"}
+       }
 
+    }
+
+    static async uninstall() {
+    
+            await prisma.config.updateMany({
+                data:{
+                    value:"false"
+                },
+                where: {
+                    name: "is_installed"
+                }
+            });
+            await prisma.program.deleteMany();
+            await prisma.category.deleteMany();
+            await prisma.config.deleteMany();
+
+            return {code:0, message:"Software uninstalled"}
+            
+        
     }
 }

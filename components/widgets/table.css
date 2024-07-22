@@ -1,0 +1,24 @@
+.table{
+width: 100%;
+}
+
+.table thead{
+    @apply bg-primary rounded-t-xl;
+}
+
+
+.table thead tr th{
+    @apply py-2 px-4;
+}
+
+.table tbody tr td{
+    @apply py-2 px-6 border text-center ;
+}
+
+.actionbtn{
+    @apply p-2 rounded-lg text-white duration-300; 
+}
+
+.btn{
+    @apply bg-primaryDark border-2 border-white ring-primary hover:ring-2 text-white px-4 py-2 rounded flex justify-center items-center gap-x-1 duration-300;
+}

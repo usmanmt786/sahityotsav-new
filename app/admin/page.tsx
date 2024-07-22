@@ -12,7 +12,7 @@ const AdminHome = () => {
                     return (
                         <Link key={index}
                         href={item.to}
-                        className="fullcenter border px-5 py-8 rounded-xl hover:ring-2 ring-primary duration-300 hover:text-primary">
+                        className="fullcenter border px-5 py-8 rounded-xl hover:ring-2 ring-primaryDark duration-300 hover:text-primaryDark">
                             <h3 className="font-bold text-3xl">{item.icon}</h3>
                             <div>{item.name}</div>
                            </Link>

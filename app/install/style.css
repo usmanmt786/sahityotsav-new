@@ -1,0 +1,3 @@
+.loadprogress{
+    @apply flex  items-center gap-x-2 font-light text-gray-400 my-1;
+}
