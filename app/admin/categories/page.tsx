@@ -11,6 +11,7 @@ const CategoriesHome = async () => {
             <DataTable
             title="Categories"
             addBtnText="Category"
+            type="category"
            
             columns={[
                 {label:"Name", value:"name"},

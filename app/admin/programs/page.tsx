@@ -1,5 +1,6 @@
-import DataTable from "@/components/widgets/DataTable";
+import DataTable from "@/components/widgets/datatable/DataTable";
 import ProgramModel from "@/models/programs/program_model";
+import EditProgram from "./Edit";
 
 const ProgramsHome = async () => {
 
@@ -10,14 +11,15 @@ const ProgramsHome = async () => {
             <DataTable 
             title="Programs"
             addBtnText="Program"
+            type="program"
             columns={[
                 {label:"Name", value:"name"},
                 {label:"Category", value:"category.name"},
               
             ]} data={data}/>
-          
+          <EditProgram/>
         </main>
     );
 }
 
-export default ProgramsHome;
+export default ProgramsHome

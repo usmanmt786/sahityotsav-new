@@ -66,6 +66,7 @@ model program {
   description        String?
   no_of_participants Int      @default(1)
   type               String   @default("individual")
+  stageType          String   @default("stage")
 
   added_at      DateTime @default(now())
   updated_at    DateTime @updatedAt

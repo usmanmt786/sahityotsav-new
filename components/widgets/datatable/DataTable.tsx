@@ -2,11 +2,12 @@
 
 import { MdAdd, MdDelete, MdEdit } from 'react-icons/md';
 import './table.css';
-import { categoryRowSignal } from '@/controller/row_actions';
+import { rowUpdateSignal } from '@/controller/row_actions';
 
 type prop = {
     title:string;
     addBtnText?:string;
+    type: "category" | "program"
     data:any[];
     columns:{label:string, value:string}[];
    
@@ -50,7 +51,8 @@ const DataTable = (prop:prop) => {
 <td className='flex gap-x-2 justify-center'>
 <button className='actionbtn bg-blue-600 hover:bg-blue-800'
 onClick={()=>{
-    categoryRowSignal.value = {
+    rowUpdateSignal.value = {
+        type:prop.type,
         action:"edit",
         data:row,
         
@@ -59,8 +61,9 @@ onClick={()=>{
 ><MdEdit/></button>
 <button className='actionbtn bg-red-600 hover:bg-red-800'
 onClick={()=>{
-    categoryRowSignal.value = {
-        action:"edit",
+    rowUpdateSignal.value = {
+        type:prop.type,
+        action:"delete",
         data:row,
         
     };
