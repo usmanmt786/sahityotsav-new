@@ -17,5 +17,27 @@
   }
   
   .p-dialog{
+    
     border: none !important;
+  }
+
+  .zinput{
+    @apply w-full px-4 py-3 bg-white ring-2 ring-gray-200 rounded-lg outline-none focus:ring-primaryDark disabled:text-black disabled:border-none disabled:rounded-none disabled:p-0 duration-300 disabled:text-xl disabled:font-bold;
+  }
+  
+  .zselect{
+    @apply w-full  bg-white py-1 rounded-lg outline-none ring-2 ring-gray-200 focus:ring-primaryDark disabled:text-black disabled:border-none disabled:rounded-none disabled:p-0 duration-300 disabled:text-xl disabled:font-bold;
+  
+  }
+  .zlabel{
+    @apply text-slate-500 text-sm mt-4;
+  }
+  
+  .submit-btn{
+    @apply shadow-xl hover:shadow-2xl text-white px-8 py-3 rounded-md flex items-center duration-300;
+  }
+
+  .gbg {
+    background: linear-gradient(320deg,#C7D9A7,#7D9C43);
+    
   }

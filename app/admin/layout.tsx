@@ -12,6 +12,7 @@ const Admin = async(props:any) => {
                 <h1 className="text-xl">Unauthorized Access</h1></div> }
            
            </main>
+           
         </AdminLayout>
     );
 }

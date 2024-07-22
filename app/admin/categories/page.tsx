@@ -1,5 +1,6 @@
-import DataTable from "@/components/widgets/DataTable";
+import DataTable from "@/components/widgets/datatable/DataTable";
 import CategoryModel from "@/models/categories/category_model";
+import EditCategory from "./Edit";
 
 const CategoriesHome = async () => {
 
@@ -7,14 +8,15 @@ const CategoriesHome = async () => {
 
     return (
         <main  className="commonwidth">
-            <DataTable 
+            <DataTable
             title="Categories"
             addBtnText="Category"
-
+           
             columns={[
                 {label:"Name", value:"name"},
               
             ]} data={cats}/>
+            <EditCategory/>
           
         </main>
     );
