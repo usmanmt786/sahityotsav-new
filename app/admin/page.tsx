@@ -5,7 +5,7 @@ const AdminHome = () => {
     
     return (
         <div className="commonwidth">
-            <h1 className="text-3xl my-3">Admin Menu</h1>
+            <h1 className="text-3xl my-3 text-primaryDark">Event Menu</h1>
             <section className="grid lg:grid-cols-4 gap-6">
             {
                 MENU_ITEMS.map((item, index)=>{
