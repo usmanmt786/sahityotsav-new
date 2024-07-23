@@ -12,8 +12,10 @@ const APPCONFIGS:ConfigType = {
         heroColor:"#30352D"
     },
     socials:{
-        youtube:"dsf",
-        facebook:"fefs"
+        youtube:"",
+        facebook:"",
+        instagram:"",
+        twitter:""
     },
     ziqx:{
         appkey:process.env.ZIQX_APPKEY!
