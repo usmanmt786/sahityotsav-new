@@ -24,8 +24,8 @@ type ZDialogProps = {
         showHeader={false} 
             dismissableMask={props.dismissable ?? true}
         >
-            <main className="px-5 pb-4">
-            <section className="flex items-start justify-between py-2 ">
+            <main className="px-5 ">
+            <section className="flex items-start justify-between pt-8 ">
                     <h1 className="text-3xl font-bold border-b pb-3">{props.header}</h1>
                     {
                         !props.disableClose &&  <button onClick={() => props.onHide()}

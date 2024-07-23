@@ -12,7 +12,7 @@ width: 100%;
 }
 
 .table tbody tr td{
-    @apply py-2 px-6 border text-center ;
+    @apply py-2 px-6 border  ;
 }
 
 .actionbtn{

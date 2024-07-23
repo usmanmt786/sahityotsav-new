@@ -35,7 +35,7 @@ const DeleteUser = () => {
         },
         onSubmit:async(values)=>{
             setLoading(true);
-            const resp = await deleteUser(values.id, values.status==="Invited");
+            const resp = await deleteUser(values.id, values.status==="invited");
             if(resp.code===0){
                 toast.success(resp.message);
                 setItem(null);

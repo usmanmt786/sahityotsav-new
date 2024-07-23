@@ -6,24 +6,34 @@ export default class ProgramModel{
         const resp = await prisma.program.findMany(
             {
                 select:{
+                    id:true,
                     name:true,
-                    category:true
+                    type:true,
+                    stageType:true,
+                    no_of_participants:true,
+                    category:{
+                        select:{
+                            id:true,
+                            name:true
+                        }
+                    }
+                },
+                where:{
+                    delete_status:false
                 }
             }
         );
         return resp??[];
     }
 
-    static async updateProgram(id:number, catId:number, name:string, description:string){
+    static async addProgram( catId:number, name:string, type:string, stage:string, participants:number){
         try {
-            await prisma.program.update({
-                where:{
-                    id
-                },
+            await prisma.program.create({
                 data:{
                     name,
-                    description,
-                    
+                    type,
+                    stageType:stage,
+                    no_of_participants:participants,
                     category:{
                         connect:{
                             id:catId
@@ -33,10 +43,58 @@ export default class ProgramModel{
 
                 
             });
-            return {code:0, message:"Category updated"}
+            return {code:0, message:"Program Added"}
         } catch (error) {
             console.error(error);
-            return {code:1, message:"Error updating category"}
+            return {code:1, message:"Error adding Program"}
+            
+        }
+    }
+
+
+    static async updateProgram(id:number, catId:number, name:string, type:string, stage:string, participants:number){
+        try {
+            await prisma.program.update({
+                where:{
+                    id
+                },
+                data:{
+                    name,
+                    type,
+                    stageType:stage,
+                    no_of_participants:participants,
+                    category:{
+                        connect:{
+                            id:catId
+                        }
+                    }
+                },
+
+                
+            });
+            return {code:0, message:"Program updated"}
+        } catch (error) {
+            console.error(error);
+            return {code:1, message:"Error updating Program"}
+            
+        }
+    }
+
+
+    static async deleteProgram(id:number){
+        try {
+            await prisma.program.update({
+                where:{
+                    id
+                },
+                data:{
+                    delete_status:true
+                }
+            });
+            return {code:0, message:"Program deleted"}
+        } catch (error) {
+            console.error(error);
+            return {code:1, message:"Error deleting Program"}
             
         }
     }

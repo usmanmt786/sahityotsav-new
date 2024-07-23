@@ -86,7 +86,8 @@ export const ZFormSelect = ({ formLabel, formik, name, options, placeHolder, dis
                 options={options}
                 optionLabel={optionLabel??"label"}
                 optionValue={optionValue??"value"}
-                onChange={(e) => formik.setFieldValue(name, e.value)}
+                onChange={(e) =>{ formik.setFieldValue(name, e.value);
+                }}
                 placeholder={placeHolder ?? formLabel}
                 className='zselect w-full'
                 disabled={disabled}

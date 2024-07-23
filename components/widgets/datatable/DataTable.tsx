@@ -10,7 +10,7 @@ type prop = {
     title:string;
     type: ModuleType;
     data:any[];
-    columns:{label:string, value:string}[];
+    columns:{label:string, value:string, className?:string}[];
    
 }
 
@@ -57,7 +57,7 @@ onClick={()=>{
                                                             const key1 = col.value.split('.')[0];
                                                             const key2 = col.value.split('.')[1];
                                                             const finalValue = key2? row[key1][key2]: row[key1];
-                                    return <td key={index2}>{finalValue}</td>
+                                    return <td key={index2} className={`${col.className??'text-center'} `}>{finalValue}</td>
                                 })}
 
 <td className='flex gap-x-2 justify-center'>

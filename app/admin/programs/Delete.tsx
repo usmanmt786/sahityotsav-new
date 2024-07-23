@@ -1,33 +1,28 @@
 "use client";
 
 import ZDialog from "@/components/common/ZDialog";
-import { ZFormInput, ZFormSelect, ZFormTextArea, ZSubmitButton } from "@/components/widgets/Form";
+import { ZSubmitButton } from "@/components/widgets/Form";
 import { useSignalEffect } from "@preact/signals-react";
 import { useFormik } from "formik";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { rowUpdateSignal } from "@/controller/row_actions";
-import * as Yup from "yup";
-import { updateUser } from "./func";
-import { ROLES } from "./data";
+import { deleteProgram } from "./func";
 
 
-const EditUser = () => {
+const DeleteProgram = () => {
+
     const [item, setItem] = useState<any>(null);
     const [loading, setLoading] = useState(false);
 
-
     useSignalEffect(()=>{
         if(rowUpdateSignal.value && 
-            rowUpdateSignal.value.type==="user" && 
-            rowUpdateSignal.value.action=="edit"){
+            rowUpdateSignal.value.type==="program" && 
+            rowUpdateSignal.value.action=="delete"){
             const data = rowUpdateSignal.value.data;
-            
             setItem(data);
             formik.setValues({
                 id: data.id,
-                role: data.role,
-                status: data.status
             });
         }
     })
@@ -35,15 +30,10 @@ const EditUser = () => {
     const formik  = useFormik({
         initialValues:{
             id: item?.id,
-            role: item?.role,
-            status: item?.status
-            
-        },validationSchema:  Yup.object({
-            role:Yup.string().required("Role is Required"),
-        }),
+        },
         onSubmit:async(values)=>{
             setLoading(true);
-            const resp = await updateUser(values.id,values.status==="invited", values.role);
+            const resp = await deleteProgram(values.id);
             if(resp.code===0){
                 toast.success(resp.message);
                 setItem(null);
@@ -60,19 +50,20 @@ const EditUser = () => {
         onHide={() => setItem(null)}
         header=""
         >
-            <h2 className="text-2xl font-bold">Edit User</h2>
             <form onSubmit={formik.handleSubmit}>
-            <ZFormSelect
-                formik={formik}
-                    formLabel="Role"
-                    name="role"
-                    options={ROLES}
-               />
-                <div className="fullcenter">
+                <div className="text-center">
+                    <h1 className="text-2xl my-2">Delete Program</h1>
+                    <p>Are you sure you want to delete this program?</p>
+                </div>
+                <div className="flex justify-center items-center gap-x-6 my-2">
+                    <button className="outline-btn"
+                    type="button"
+                    onClick={()=>setItem(null)}
+                    >Cancel</button>
                     <ZSubmitButton
-                    loadText="Updating..."
+                    loadText="Deleting..."
                     loading={loading}
-                    text="Update User"
+                    text="Delete"
                     />
                 </div>
             </form>
@@ -81,4 +72,4 @@ const EditUser = () => {
     );
 }
 
-export default EditUser;
+export default DeleteProgram;

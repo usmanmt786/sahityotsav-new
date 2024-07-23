@@ -14,7 +14,7 @@ export default class UserModel{
           id: user.id,
           name: user.name,
           role: user.role,
-          status: "Active"
+          status: "active"
          
         });
      })
@@ -23,7 +23,7 @@ export default class UserModel{
           id: user.id,
           name: user.email,
           role: user.role,
-          status: "Invited"
+          status: "invited"
         });
      })
   
