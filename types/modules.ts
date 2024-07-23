@@ -1,1 +1,1 @@
-export type ModuleType = "category" | "program" | "participant";
+export type ModuleType = "category" | "program" | "participant" | "user";

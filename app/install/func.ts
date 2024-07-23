@@ -1,9 +1,8 @@
 "use server";
 
-import { authToken } from "@/functions/auth/token";
 import InstallModel from "@/models/install/install_model";
 import { AuthModel } from "@/models/users/auth";
-import UserModel from "@/models/users/create_user";
+import UserModel from "@/models/users/user_model";
 
 export default async function install() {
     const resp = await InstallModel.install();
