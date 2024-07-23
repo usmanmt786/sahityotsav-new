@@ -6,7 +6,7 @@ import { useSignalEffect } from "@preact/signals-react";
 import { useFormik } from "formik";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { rowUpdateSignal } from "@/controller/row_actions";
+import { disposeRowUpdate, rowUpdateSignal } from "@/controller/row_actions";
 import * as Yup from "yup";
 import { addUser } from "./func";
 import { ROLES } from "./data";
@@ -17,7 +17,9 @@ const AddUser = () => {
 
 
     useSignalEffect(() => {
-        if (rowUpdateSignal.value && rowUpdateSignal.value.type === "user" && rowUpdateSignal.value.action == "add") {
+        if (rowUpdateSignal.value && 
+            rowUpdateSignal.value.type === "user" && 
+            rowUpdateSignal.value.action == "add") {
             setShow(true)
         }
     })
@@ -48,7 +50,9 @@ const AddUser = () => {
     return (
         <ZDialog
             visible={show}
-            onHide={() => setShow(false)}
+            onHide={() => {setShow(false);
+                disposeRowUpdate()
+            }}
             header=""
         >
             <h2 className="text-2xl font-bold">Add User Access</h2>

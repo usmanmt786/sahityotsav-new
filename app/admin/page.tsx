@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ADMIN_MENU, MENU_ITEMS } from "./Items";
+import { isAdminAuthorized } from "@/functions/auth/admin_validate";
 
-const AdminHome = () => {
-    
+const AdminHome = async() => {
+    const isAdmin  = await isAdminAuthorized();
+
     return (
         <div className="commonwidth">
             <h1 className="text-3xl my-3 text-primaryDark">Event Menu</h1>
@@ -23,8 +25,9 @@ const AdminHome = () => {
             </section>
 
             {/* ADMIN MENU */}
-
-            <h1 className="text-3xl mt-8 my-3 text-primaryDark">Admin Menu</h1>
+            {
+                isAdmin && <div>
+                      <h1 className="text-3xl mt-8 my-3 text-primaryDark">Admin Menu</h1>
             <section className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {
                 ADMIN_MENU.map((item, index)=>{
@@ -40,6 +43,10 @@ const AdminHome = () => {
                 
             }
             </section>
+                </div>
+            }
+
+          
         </div>
     );
 }

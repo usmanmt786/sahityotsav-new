@@ -9,3 +9,6 @@ type RowActionType = {
 
 export const rowUpdateSignal = signal<RowActionType| null>(null);
 
+export function disposeRowUpdate(){
+    rowUpdateSignal.value = null
+}
