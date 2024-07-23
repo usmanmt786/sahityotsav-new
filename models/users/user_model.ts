@@ -69,6 +69,11 @@ export default class UserModel{
 
   static async  updateUser(id:number, role:string) {
     try {
+      const admins = await this.curAdmins();
+
+      if(admins.length<2 && role!=="admin"){
+        return {code:1, message:"Must have at least 1 admin"}
+      }
       await prisma.user.update({
         where:{
           id
@@ -85,9 +90,22 @@ export default class UserModel{
     }
 }
 
+static async curAdmins(){
+ return await prisma.user.findMany({
+    where:{
+      role: "admin"
+    }
+  })
+}
 
   static async deleteUser(id:number){
     try {
+      const admins = await this.curAdmins();
+
+      if(admins.length<2){
+        return {code:1, message:"Must have at least 1 admin"}
+      }
+      
       await prisma.user.delete({
         where:{
           id
