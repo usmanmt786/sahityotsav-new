@@ -3,11 +3,12 @@
 import { MdAdd, MdDelete, MdEdit } from 'react-icons/md';
 import './table.css';
 import { rowUpdateSignal } from '@/controller/row_actions';
+import { ModuleType } from '@/types/modules';
+import { GoDatabase } from 'react-icons/go';
 
 type prop = {
     title:string;
-    addBtnText?:string;
-    type: "category" | "program"
+    type: ModuleType;
     data:any[];
     columns:{label:string, value:string}[];
    
@@ -15,18 +16,29 @@ type prop = {
 
 const DataTable = (prop:prop) => {
     return (
-        <div className='my-5'>
+        <div className='my-5 overflow-x-hidden'>
 
 <section className='flex justify-between items-center mb-5'>
 <h1 className="text-2xl font-bold">{prop.title}</h1>
-<button className='btn'> <MdAdd className='text-lg'/> Add {prop.addBtnText}</button>
+<button className='btn'
+onClick={()=>{
+    rowUpdateSignal.value = {
+        type:prop.type,
+        action:"add",
+        data:null,
+    };
+}}
+> <MdAdd className='text-lg capitalize'/> Add {prop.type}</button>
 </section>
 
 
 {
-    prop.data.length<1?<div>No Data Found</div>:
+    prop.data.length<1?<div className='h-[60vh] fullcenter border rounded-lg bg-gray-50 text-gray-400 select-none'>
+        <GoDatabase className='text-5xl mb-2' />
 
-            <table className="table">
+        No Data Found</div>:
+
+            <table className="table overflow-x-auto">
                 <thead>
                     <tr>
                         <th>Sl.</th>

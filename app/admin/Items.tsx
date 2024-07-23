@@ -17,7 +17,7 @@ const MENU_ITEMS = [
 
     {
         name: "Participants",
-        to: "",
+        to: "/admin/participants",
         icon:<FaPeopleGroup />
 
     },

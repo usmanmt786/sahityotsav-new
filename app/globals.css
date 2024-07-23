@@ -41,3 +41,7 @@
     background: linear-gradient(320deg,#C7D9A7,#7D9C43);
     
   }
+
+  .outline-btn{
+    @apply py-[0.65rem] px-6 shadow-xl hover:shadow-2xl rounded-md ring-primaryDark text-primaryDark ring-2  hover:text-primary duration-300;
+  }

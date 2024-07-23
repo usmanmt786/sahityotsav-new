@@ -1,8 +1,9 @@
+import { ModuleType } from "@/types/modules";
 import { signal } from "@preact/signals-react";
 
 type RowActionType = {
-    type:"category" | "program";
-    action:"edit" | "delete";
+    type:ModuleType;
+    action:"add" |"edit" | "delete";
     data:any;
 }
 

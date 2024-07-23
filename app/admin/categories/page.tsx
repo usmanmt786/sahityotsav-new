@@ -10,7 +10,6 @@ const CategoriesHome = async () => {
         <main  className="commonwidth">
             <DataTable
             title="Categories"
-            addBtnText="Category"
             type="category"
            
             columns={[
