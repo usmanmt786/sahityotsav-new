@@ -1,3 +1,5 @@
+// TODO: Rename this file as `configs.ts`
+
 import ConfigType from "./types/configs_types";
 
 const APPCONFIGS:ConfigType = {
