@@ -23,7 +23,7 @@ const MENU_ITEMS = [
     },
     {
         name: "Program List",
-        to: "",
+        to: "/admin/programlist",
         icon: <FaList />
 
     },

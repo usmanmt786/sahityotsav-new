@@ -68,11 +68,12 @@ model program {
   type               String   @default("individual")
   stageType          String   @default("stage")
 
-  added_at      DateTime @default(now())
-  updated_at    DateTime @updatedAt
-  delete_status Boolean  @default(false)
-  categoryId    Int
-  stageId       Int?
+  added_at            DateTime              @default(now())
+  updated_at          DateTime              @updatedAt
+  delete_status       Boolean               @default(false)
+  categoryId          Int
+  stageId             Int?
+  program_participant program_participant[]
 }
 
 model participant {
@@ -82,22 +83,26 @@ model participant {
   father_name String
   place       String
 
-  added_at      DateTime @default(now())
-  updated_at    DateTime @updatedAt
-  delete_status Boolean  @default(false)
+  added_at            DateTime              @default(now())
+  updated_at          DateTime              @updatedAt
+  delete_status       Boolean               @default(false)
+  program_participant program_participant[]
 }
 
 model program_participant {
-  id             Int     @id @default(autoincrement())
-  program_id     Int
-  participant_id Int
-  code_letter    String?
-  win_place      Int     @default(0)
-  score          Int     @default(0)
-  grade          String?
-  is_attended    Boolean @default(false)
+  id          Int          @id @default(autoincrement())
+  program     program?     @relation(fields: [programId], references: [id])
+  participant participant? @relation(fields: [participantId], references: [id])
+  code_letter String?
+  win_place   Int          @default(0)
+  score       Int          @default(0)
+  grade       String?
+  is_attended Boolean      @default(false)
 
   added_at      DateTime @default(now())
   updated_at    DateTime @updatedAt
   delete_status Boolean  @default(false)
+
+  programId     Int?
+  participantId Int?
 }

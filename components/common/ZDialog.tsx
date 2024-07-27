@@ -26,7 +26,7 @@ type ZDialogProps = {
         >
             <main className="px-5 ">
             <section className="flex items-start justify-between pt-8 ">
-                    <h1 className="text-3xl font-bold border-b pb-3">{props.header}</h1>
+                    <h1 className="text-2xl font-bold border-b pb-3 text-primaryDark">{props.header}</h1>
                     {
                         !props.disableClose &&  <button onClick={() => props.onHide()}
                         className="bg-gray-100 p-2 rounded-full border-2 border-transparent hover:border-gray-400 duration-300">

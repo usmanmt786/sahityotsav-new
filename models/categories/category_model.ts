@@ -7,6 +7,23 @@ export default class CategoryModel{
         return resp??[];
     }
 
+    static async getCatsWithPrograms(){
+        const resp = await prisma.category.findMany({
+            select:{
+                id:true,
+                name:true,
+                program:{
+                    select:{
+                        id:true,
+                        name:true,
+                        
+                    }
+                }
+            }
+        });
+        return resp??[];
+    }
+
     static async updateCategory(id:number, name:string, description:string){
         try {
             await prisma.category.update({
