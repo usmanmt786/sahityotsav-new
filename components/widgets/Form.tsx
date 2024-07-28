@@ -69,10 +69,10 @@ export const ZSubmitButton = ({text, loadText, loading, showArrow }:{text:string
 }
 
 
-export const ZFormSelect = ({ formLabel, formik, name, options, placeHolder, disabled, filter, emptyMessage,optionLabel, optionValue, multiple }:
+export const ZFormSelect = ({ formLabel, formik, name, options, placeHolder, disabled, filter, emptyMessage,optionLabel, optionValue, onChange }:
     {
         formLabel: string, formik: any, name: string, options: any[], placeHolder?: string, disabled?: boolean, filter?: boolean,
-        emptyMessage?: ReactNode, optionLabel?: string, optionValue?:string, multiple?:boolean
+        emptyMessage?: ReactNode, optionLabel?: string, optionValue?:string, onChange?:any
     }) => {
     return (
         <div>
@@ -86,7 +86,13 @@ export const ZFormSelect = ({ formLabel, formik, name, options, placeHolder, dis
                 options={options}
                 optionLabel={optionLabel??"label"}
                 optionValue={optionValue??"value"}
-                onChange={(e) =>{ formik.setFieldValue(name, e.value);
+                onChange={(e) =>{
+                    if(onChange){
+                        onChange(e)
+                    }else{
+                        formik.setFieldValue(name, e.value);
+
+                    }
                 }}
                 placeholder={placeHolder ?? formLabel}
                 className='zselect w-full'

@@ -16,7 +16,7 @@ type ZDialogProps = {
     // Add other props as needed
   };
 
-  const ZDialog: React.FC<ZDialogProps> = (props) => {
+  const ZDialog: React.FC<ZDialogProps> = (props) => {8
     return (
         <Dialog onHide={props.onHide}
             visible={props.visible}
