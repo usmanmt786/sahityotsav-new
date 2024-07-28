@@ -35,7 +35,7 @@ const MENU_ITEMS = [
     },
     {
         name: "Results",
-        to: "",
+        to: "/admin/results",
         icon: <MdChecklistRtl />
 
     },
