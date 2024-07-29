@@ -3,8 +3,10 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const { IncomingForm } = require('formidable');
+const cors = require('cors')
 
 const app = express();
+app.use(cors());
 
 const uploadPath = path.join(process.cwd(), 'drive', 'uploads');
 
