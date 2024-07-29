@@ -49,6 +49,51 @@ export default class ResultModel {
         return sortedResp;
     }
 
+    static async getWinResults(programId: number) {
+
+        const resp = await prisma.program_participant.findMany({
+            where: {
+                programId,
+                AND: {
+                    win_place: {
+                        gt: 0
+                    }
+                }
+            },
+            select: {
+                id: true,
+                win_place: true,
+                score: true,
+                grade: true,
+                participant: {
+                    select: {
+                        id: true,
+                        name: true,
+                        place: true,
+                        chest_no: true,
+
+                    },
+
+                },
+                program: {
+                    select: {
+                        name: true,
+                        category: {
+                            select: {
+                                name: true
+                            }
+                        }
+                    }
+                }
+            },
+            orderBy: {
+                win_place: 'asc'
+            }
+        });
+
+        
+        return resp;
+    }
     static async updateResult(id: number, winPlace: number, score: number, grade?: string) {
         try {
             await prisma.program_participant.update({

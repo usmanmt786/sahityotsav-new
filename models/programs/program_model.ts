@@ -26,6 +26,21 @@ export default class ProgramModel{
         return resp??[];
     }
 
+    static async getByCatId(catId:number){
+        try {
+            const resp = await prisma.program.findMany({
+                where:{
+                    categoryId:catId
+                }
+            });
+            return resp??[];
+        } catch (error) {
+            console.log(error);
+            
+            return [];
+        }
+    }
+
     static async addProgram( catId:number, name:string, type:string, stage:string, participants:number){
         try {
             await prisma.program.create({
