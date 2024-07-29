@@ -1,0 +1,2 @@
+DATABASE_URL="file:./prod.db"
+ZIQX_APPKEY=""
