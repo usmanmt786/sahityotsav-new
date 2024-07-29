@@ -106,3 +106,18 @@ model program_participant {
   programId     Int?
   participantId Int?
 }
+
+model posters {
+  id          Int      @id @default(autoincrement())
+  type        String   @default("result")
+  theme       String   @default("light")
+  file_name   String
+  header_locx Int      @default(0)
+  header_locy Int      @default(0)
+  body_locx   Int      @default(0)
+  body_locy   Int      @default(0)
+  footer_locx Int      @default(0)
+  footer_locy Int      @default(0)
+  added_at    DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}

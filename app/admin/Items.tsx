@@ -41,7 +41,7 @@ const MENU_ITEMS = [
     },
     {
         name: "Posters",
-        to: "",
+        to: "/admin/posters",
         icon: <MdOutlineImageAspectRatio />
 
     },
