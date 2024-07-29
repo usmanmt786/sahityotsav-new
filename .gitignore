@@ -38,4 +38,4 @@ next-env.d.ts
 .env
 configs.ts
 /prisma/dev.db
-/public/assets/posters/
+/drive/uploads/

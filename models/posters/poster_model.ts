@@ -33,4 +33,41 @@ export default class PosterModel {
             
         }
     }
+
+    static async updatePosterTemplate(id:number,theme: string, x: number, y: number){
+        try {
+            await prisma.posters.update(
+                
+                {
+where:{
+    id
+},
+
+               data:{
+                   theme: theme,
+                   body_locx: x,
+                   body_locy: y,
+
+               }
+           });
+           return true;
+           
+       } catch (error) {
+           console.error(error);
+           return false;
+           
+       } 
+    }
+
+    static async deletePoster(id:number){
+        try {
+            await prisma.posters.delete({where:{id}});
+           return true;
+           
+       } catch (error) {
+           console.error(error);
+           return false;
+           
+       }  
+    }
 }

@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
 
-const PosterEditor = ({ imageUrl, onChange }:{imageUrl:any, onChange:(theme:string,x:number,y:number)=>void}) => {
+const PosterEditor = ({curTheme,x,y, imageUrl, onChange }:{curTheme:string,x:number,y:number,imageUrl:any, onChange:(theme:string,x:number,y:number)=>void}) => {
   const [image] = useImage(imageUrl);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(curTheme);
   const frontImgUrl = theme==="light"?"/images/template-text.png":"/images/template-text-w.png";
   const [frontimage] = useImage(frontImgUrl)
-  const [textPosition, setTextPosition] = useState({ x: 50, y: 50 });
+  const [textPosition, setTextPosition] = useState({ x,y });
 
   const handleDragEnd = (e:any) => {
     const scaledX = e.target.x();

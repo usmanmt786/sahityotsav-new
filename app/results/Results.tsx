@@ -11,7 +11,7 @@ import { FaIdCardAlt } from "react-icons/fa";
 import Posters from "./Posters";
 
 
-const ResultsSection = ({cats}:{cats:any[]}) => {
+const ResultsSection = ({cats,posters}:{cats:any[],posters:any[]}) => {
 
     const [loading, setLoading] = useState(false);
     const [programs, setPrograms] = useState<any[]>([]);
@@ -121,7 +121,7 @@ const ResultsSection = ({cats}:{cats:any[]}) => {
 
            {
             result && result.length>0 &&  <section className="grid lg:grid-cols-3 gap-8">
-                <Posters/>
+                <Posters posters={posters} results={result}/>
                 </section>
            }
         </div>

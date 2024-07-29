@@ -49,3 +49,7 @@
   .btn{
     @apply py-[0.65rem] px-6 shadow-xl hover:shadow-2xl rounded-md ring-primaryDark  ring-2   duration-300;
   }
+
+  .swal2-container {
+    z-index: 9999 !important;
+  }

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AiOutlineCloudUpload, AiOutlineLoading3Quarters } from "react-icons/ai";
 import { MdError } from "react-icons/md";
 import PosterEditor from "./PosterEditor";
-import { addPoster, uploadImage } from "./upload";
+import { addPoster, uploadImage } from "./func";
 import toast from "react-hot-toast";
 
 const UploadResultPoster = () => {
@@ -15,8 +15,8 @@ const UploadResultPoster = () => {
     const [loading, setLoading] = useState(false);
     const [posterConfigs, setPosterConfigs] = useState({
         theme:"light",
-        x:50,
-        y:50
+        x:100,
+        y:100
     });
 
 function handleFile(e:any){
@@ -101,7 +101,11 @@ async function handleSubmit(){
 
                 {
                     image ? <div>
-                        <PosterEditor imageUrl={URL.createObjectURL(image)} 
+                        <PosterEditor
+                        curTheme={posterConfigs.theme}
+                        x={posterConfigs.x}
+                        y={posterConfigs.y}
+                        imageUrl={URL.createObjectURL(image)} 
                         onChange={(theme:string,x:number,y:number)=>{
                             setPosterConfigs({
                                 theme,x,y

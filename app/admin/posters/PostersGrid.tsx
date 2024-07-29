@@ -1,14 +1,26 @@
+"use client";
 
-const PostersGrid = ({posters}:{posters: any}) => {
+import Constants from "@/data/constants";
+import EditResultPoster from "./EditPoster";
+import { useState } from "react";
+
+const PostersGrid = ({ posters }: { posters: any }) => {
+    const [curPoster, setCurPoster] = useState(null);
     return (
-        <div className="grid lg:grid-cols-4 gap-8">
-            {
-posters.map((ps:any)=>{
-    return <div key={ps.id}>
-        <img src={`/assets/posters/${ps.file_name}`} className="rounded-lg border" alt="" />
-    </div>
-})
-            }
+        <div>
+            <div className="grid lg:grid-cols-4 gap-8">
+                {
+                    posters.map((ps: any) => {
+                        return <div key={ps.id}
+                            onClick={() => setCurPoster(ps)}
+                            className="cursor-pointer"
+                        >
+                            <img src={`${Constants.DRIVE_URL}uploads/${ps.file_name}`} className="rounded-lg border" alt="" />
+                        </div>
+                    })
+                }
+            </div>
+            <EditResultPoster poster={curPoster} onHide={() => setCurPoster(null)} />
         </div>
     );
 }

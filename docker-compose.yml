@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3006:3000" 
+    volumes:
+      - .:/app
+      - drive_uploads:/app/drive/uploads  # Volume for uploads
+      - prisma_db:/app/prisma  # Volume for SQLite database
+    command: ["npm", "run", "start:both"]
+
+volumes:
+  drive_uploads:
+    driver: local
+  prisma_db:
+    driver: local
