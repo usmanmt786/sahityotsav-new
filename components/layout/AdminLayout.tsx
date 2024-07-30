@@ -3,6 +3,7 @@ import AOSClient from "../common/AOSClient";
 import APPCONFIGS from "@/configs";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import Footer from "../common/Footer";
+import BackButton from "../common/BackButton";
 
 const AdminLayout = (props:any) => {
    
@@ -22,6 +23,7 @@ const AdminLayout = (props:any) => {
                     </h6>
                 </nav>
             </section>
+            <BackButton/>
             {props.children}
             <Footer/>
         </div>

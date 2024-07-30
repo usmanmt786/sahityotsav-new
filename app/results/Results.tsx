@@ -120,7 +120,7 @@ const ResultsSection = ({cats,posters}:{cats:any[],posters:any[]}) => {
             </form>
 
            {
-            result && result.length>0 &&  <section className="grid lg:grid-cols-3 gap-8">
+            result && result.length>0 &&  <section>
                 <Posters posters={posters} results={result}/>
                 </section>
            }

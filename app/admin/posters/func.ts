@@ -14,11 +14,12 @@ export async function uploadImage(data: FormData) {
     }
 
 
-   const resp = await fetch(`${Constants.DRIVE_URL}/upload`,{
+   const resp = await fetch(`${Constants.DRIVE_URL}upload`,{
     method: 'POST',
     body: data
    });
 
+   
    const json = await resp.json();
    
    return json;

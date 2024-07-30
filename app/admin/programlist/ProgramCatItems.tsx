@@ -16,7 +16,8 @@ const ProgramCatItems = ({ items,}: { items: any[],  }) => {
                         return (
                             <div
                                 key={item.id}
-                                className="border p-5 rounded cursor-pointer"
+                                className="border p-5 rounded cursor-pointer 
+                                hover:ring-2 ring-primaryDark duration-300"
                                 onClick={() => {
                                     setCurrent(item);
                                 }}

@@ -16,11 +16,11 @@ type prop = {
 
 const DataTable = (prop:prop) => {
     return (
-        <div className='my-5 overflow-x-hidden'>
+        <div className='mb-3 overflow-x-hidden'>
 
-<section className='flex justify-between items-center mb-5'>
+<section className='flex justify-between items-center mb-5 mt-4'>
 <h1 className="text-2xl font-bold">{prop.title}</h1>
-<button className='btn'
+<button className='btn mr-1'
 onClick={()=>{
     rowUpdateSignal.value = {
         type:prop.type,

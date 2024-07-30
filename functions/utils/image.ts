@@ -1,28 +1,23 @@
-import html2canvas from "html2canvas";
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
-import download from 'downloadjs';
+import { toPng } from 'html-to-image';
+import download from "downloadjs";
 
-export const downloadComponent = async (id:string) => {
-    const element = document.getElementById(id);
-    if(element){
-      // toJpeg(element).then(function (dataUrl) {
-      //   download(dataUrl, 'my-node.png');
-      // });
-       const canvas = await html2canvas(element,
-        {
-          useCORS: true,
-          allowTaint : true
-        }
-       ),
-        data = canvas.toDataURL('image/jpg'),
-        link = document.createElement('a');
-    
-        link.href = data;
-        link.download = 'downloaded-image.jpg';
-    
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-   
-  };
+export async function downloadComponent (id: string, name: string){
+  const element = document.getElementById(id);
+  if (element) {
+    const originalTransform = element.style.transform; // Save original transform
+    element.style.transform = "scale(1)";
+   await toPng(element,{
+      canvasHeight: 1000,
+      canvasWidth: 1000
+    })
+    .then(function (dataUrl) {
+      download(dataUrl, `${name}.png`);
+    }).finally(() => {
+      element.style.transform = originalTransform; // Restore original transform
+    });
+
+  }
+  await new Promise(resolve => setTimeout(resolve, 500));
+
+  return true;
+};

@@ -9,7 +9,7 @@ const Results = async() => {
 
     return (
         <GuestLayout>
-            <main className="min-h-[90vh] commonwidth">
+            <main className="min-h-[90vh] commonwidth overflow-hidden">
                 <ResultsSection cats={cats} posters={posters}/>
             </main>
         </GuestLayout>
