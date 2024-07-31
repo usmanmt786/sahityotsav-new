@@ -8,19 +8,16 @@ export async function uploadImage(data: FormData) {
 
   try {
 
-    const file: File | null = data.get('file') as unknown as File
-    if (!file) {
-      throw new Error('No file uploaded')
-    }
-
-
-   const resp = await fetch(`${Constants.DRIVE_URL}upload`,{
+   const resp = await fetch(`${Constants.DRIVE_URL}upload/posters`,
+    {
     method: 'POST',
     body: data
    });
 
    
    const json = await resp.json();
+   console.log(json);
+   
    
    return json;
   } catch (error) {

@@ -27,12 +27,12 @@ const MENU_ITEMS = [
         icon: <FaList />
 
     },
-    {
-        name: "Stages",
-        to: "",
-        icon:<TbPodium />
+    // {
+    //     name: "Stages",
+    //     to: "/admin/stages/",
+    //     icon:<TbPodium />
 
-    },
+    // },
     {
         name: "Results",
         to: "/admin/results",

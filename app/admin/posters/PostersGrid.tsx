@@ -17,7 +17,7 @@ const PostersGrid = ({ posters }: { posters: any }) => {
                         >
 
                             <img 
-                            src={`${Constants.DRIVE_URL}uploads/${ps.file_name}`} 
+                            src={`${Constants.DRIVE_URL}uploads/posters/${ps.file_name}`} 
                             className="rounded-lg border" alt="" />
                             <div 
                             className="absolute top-0 bottom-0 right-0 left-0 bg-black/35 text-white text-2xl

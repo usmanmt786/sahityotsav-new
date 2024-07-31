@@ -77,7 +77,7 @@ const EditResultPoster = ({ poster, onHide }: { poster: any, onHide: any }) => {
                     curTheme={posterConfigs.theme}
                     x={posterConfigs.x}
                     y={posterConfigs.y}
-                    imageUrl={`${Constants.DRIVE_URL}uploads/${poster?.file_name}`}
+                    imageUrl={`${Constants.DRIVE_URL}uploads/posters/${poster?.file_name}`}
                     onChange={(theme: string, x: number, y: number) => {
                         setPosterConfigs({
                             theme, x, y

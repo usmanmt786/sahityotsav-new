@@ -19,7 +19,7 @@ const Posters = ({results,posters, }:{results:any, posters:any[], }) => {
                                 id={ps.id}
                                 theme={ps.theme}
                                 result={results}
-                                imageUrl={`${Constants.DRIVE_URL}uploads/${ps.file_name}`}
+                                imageUrl={`${Constants.DRIVE_URL}uploads/posters/${ps.file_name}`}
                                 x={ps.body_locx} y={ps.body_locy}
                                 setDownloading={setDownloading}
                                 />

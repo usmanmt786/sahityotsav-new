@@ -51,7 +51,7 @@ async function handleSubmit(){
     setLoading(true);
 
     const data = new FormData()
-      data.set('file', image!)
+      data.set('files', image!)
 
     const resp = await uploadImage(data);
     if(!resp.success){
@@ -60,7 +60,12 @@ async function handleSubmit(){
 
         return ;
     }
-    const filename = resp.file!;
+    if(resp?.files?.length===0){
+        toast.error("Failed to Upload");
+        setLoading(false);
+        return ;
+    }
+    const filename = resp?.files[0]?.name;
     const addResp = await addPoster(filename,posterConfigs);
     if(!addResp){
         toast.error("Failed to add template");

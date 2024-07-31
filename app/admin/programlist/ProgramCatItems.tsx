@@ -6,7 +6,7 @@ import ZSideBar from "../../../components/common/ZSideBar";
 import ViewProgramlist from "./ViewProgramlist";
 
 
-const ProgramCatItems = ({ items,}: { items: any[],  }) => {
+const ProgramCatItems = ({ items, }: { items: any[], }) => {
     const [current, setCurrent] = useState<any>(null);
     return (
         <div>
