@@ -1,9 +1,9 @@
 import DataTable from "@/components/widgets/datatable/DataTable";
-import ParticipantModel from "@/models/partiticipants/participant_model";
 import AddUser from "./Add";
 import EditUser from "./Edit";
 import DeleteUser from "./Delete";
 import UserModel from "@/models/users/user_model";
+import InvitationLink from "./InvitationLink";
 
 
 const Participants = async () => {
@@ -23,6 +23,7 @@ const Participants = async () => {
           <AddUser/>
           <EditUser/>
           <DeleteUser/>
+          <InvitationLink/>
         </main>
     );
 }

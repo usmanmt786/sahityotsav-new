@@ -13,7 +13,9 @@ RUN npm install
 # Copy all project files
 COPY . .
 
-RUN chmod +x start.sh
+RUN npx prisma migrate deploy
+
+RUN npx prisma generate
 
 # Build Next.js application
 RUN npm run build
@@ -22,4 +24,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Start both Next.js and Express servers
-CMD ["./start.sh"]
+CMD ["npm","run", "start"]

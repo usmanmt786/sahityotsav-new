@@ -1,3 +1,5 @@
+import APPCONFIGS from "@/configs";
+
 export default class Constants {
-    static readonly DRIVE_URL = "http://localhost:4000/";
+    static readonly DRIVE_URL = APPCONFIGS.drive;
 }

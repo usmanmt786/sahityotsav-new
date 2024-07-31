@@ -8,6 +8,7 @@ const APPCONFIGS:ConfigType = {
     typeName:"Kannur",
     venue:"Thalassery",
     venueDates:"August 10, 11, 12",
+    domain:"mysite.com",
     style:{
         primaryColor:"#C7D9A7",
         primaryDark:"#7D9C43",

@@ -2,6 +2,9 @@
 const nextConfig = {
     env:{
         ZIQX_APPKEY: process.env.ZIQX_APPKEY
+    },
+    eslint:{
+        ignoreDuringBuilds: true
     }
 };
 

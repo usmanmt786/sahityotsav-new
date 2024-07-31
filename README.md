@@ -40,6 +40,18 @@ This will setup the project with required initial data and other troubleshooting
 
 ### ⚠️ Please do this step as soon as the project is setup in the server to avoid unauthorized access.
 
+## Docker
+Build Docker Image
+```
+docker-compose build
+
+```
+Run as docker
+```
+docker run -d -p {LOCAL_PORT}:3000 sahityotsav-app
+
+```
+
 ## FAQ
 * **Supports Serverless?**<br/>
 No. As it needs database operations and access to file system it must be deployed in a cloud server.

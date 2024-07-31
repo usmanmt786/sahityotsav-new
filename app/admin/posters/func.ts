@@ -14,10 +14,7 @@ export async function uploadImage(data: FormData) {
     body: data
    });
 
-   
-   const json = await resp.json();
-   console.log(json);
-   
+   const json = await resp.json();   
    
    return json;
   } catch (error) {

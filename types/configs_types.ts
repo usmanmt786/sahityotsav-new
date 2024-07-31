@@ -5,6 +5,8 @@ export default interface ConfigType{
     venue: string;
     venueDates: string;
     // Site settings
+    domain: string;
+    drive: string;
     style:{
         primaryColor: string;
         primaryDark: string;
