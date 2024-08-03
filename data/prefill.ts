@@ -153,12 +153,25 @@ const COMMON_PROGRAMS =
         {id: 151, name: "CALLIGRAPHY", categoryId: 8},
         {id: 152, name: "BOOK TEST", categoryId: 8},
         {id: 153, name: "QUIZ", categoryId: 8},
-        {id: 154, name: "BOOK TEST GIRLS", categoryId: 1},
-        {id: 155, name: "BOOK TEST (GIRLS)", categoryId: 2},
-        {id: 156, name: "QUIZ GIRLS", categoryId: 8},
-        {id: 157, name: "BOOK TEST (GIRLS)", categoryId: 3}
+        {id: 154, name: "QUIZ GIRLS", categoryId: 8},
+        
+        {id: 155, name: "ESSAY WRITING MALAYALAM", categoryId: 8},
+        {id: 156, name: "ESSAY WRITING ENGLISH", categoryId: 8},
+        {id: 157, name: "STORY WRITING MALAYALAM", categoryId: 8},
+        {id: 158, name: "STORY WRITING ENGLISH", categoryId: 8},
+        {id: 159, name: "POEM MAKING MALAYALAM", categoryId: 8},
+        {id: 160, name: "POEM MAKING ENGLISH", categoryId: 8},
+        {id: 160, name: "PENCIL DRAWING", categoryId: 8},
+        {id: 161, name: "WATER COLOURING", categoryId: 8},
+        {id: 162, name: "CALLIGRAPHY", categoryId: 8},
+        {id: 163, name: "BOOK TEST", categoryId: 8},
+        {id: 164, name: "QUIZ", categoryId: 8},
+        {id: 165, name: "QUIZ GIRLS", categoryId: 8},
 
-    
+        {id: 166, name: "BOOK TEST GIRLS", categoryId: 1},
+        {id: 167, name: "BOOK TEST (GIRLS)", categoryId: 2},
+        {id: 168, name: "BOOK TEST (GIRLS)", categoryId: 3}
+
 ];
 
 
@@ -170,7 +183,8 @@ const COMMON_CATEGORIES = [
     {id:5,name:"Senior"},
     {id:6,name:"General"},
     {id:7,name:"Campus"},
-    {id:8,name:"Campus Girls"}
+    {id:8,name:"Campus Girls"},
+    {id:9,name:"Campus Girls Parallel"}
 ];
 
 export  {COMMON_PROGRAMS, COMMON_CATEGORIES};

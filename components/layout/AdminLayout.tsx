@@ -18,9 +18,7 @@ const AdminLayout = (props:any) => {
 
                     </Link>
                    
-                    <h6 className="text-lg uppercase font-bold">
-                        {APPCONFIGS.typeName} {APPCONFIGS.type}
-                    </h6>
+                    
                 </nav>
             </section>
             <BackButton/>
