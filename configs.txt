@@ -9,6 +9,7 @@ const APPCONFIGS:ConfigType = {
     venue:"Thalassery",
     venueDates:"August 10, 11, 12",
     domain:"mysite.com",
+    drive:"https://drive.sahityotsav.com/",
     style:{
         primaryColor:"#C7D9A7",
         primaryDark:"#7D9C43",

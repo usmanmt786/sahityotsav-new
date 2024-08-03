@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { MdContentCopy } from "react-icons/md";
 
 const InvitationLink = () => {
-    const link = `https://${APPCONFIGS.domain}/invitaion`;
+    const link = `https://${APPCONFIGS.domain}/invitation`;
     return (
         <section className="p-5 bg-primary bg-opacity-30  mt-6 mb-3 ring-2 ring-primaryDark inline-block">
         <h4 className="text-xl font-bold">Note</h4>

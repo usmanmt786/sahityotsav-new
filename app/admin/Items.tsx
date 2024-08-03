@@ -1,6 +1,6 @@
 import { FaList, FaUserShield } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdPerson } from "react-icons/md";
+import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdPerson, MdSettings } from "react-icons/md";
 import { TbPodium } from "react-icons/tb";
 
 const MENU_ITEMS = [
@@ -55,6 +55,11 @@ const ADMIN_MENU = [
         name: "Access Users",
         to: "/admin/users",
         icon: <FaUserShield />
+    },
+    {
+        name: "Configs",
+        to: "/admin/configs",
+        icon: <MdSettings />
     },
 
 ];

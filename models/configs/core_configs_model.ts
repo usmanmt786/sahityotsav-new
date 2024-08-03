@@ -1,0 +1,30 @@
+
+
+
+export default class CoreConfigs {
+    static async getCoreConfigs(){
+        try {
+            let configs:any = {
+                typeName:"",
+                venue:"",
+                venueDates:"",
+    youtube:"",
+    facebook:"",
+    instagram:"",
+    twitter:"",
+            };
+
+    const confs = await prisma?.config?.findMany();
+
+    if(confs){
+        confs.map((c)=>{
+            configs[c.name] = c.value;
+        })
+    }
+    return configs;
+            
+        } catch (error) {
+           return {code:1, message:"Failed to get core configs"} 
+        }
+    }
+}

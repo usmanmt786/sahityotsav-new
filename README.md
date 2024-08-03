@@ -22,6 +22,11 @@ git clone https://github.com/fathah/sahityotsav.git
 
 * Create a `.env` file and define `DATABASE_URL` variable.
 
+#### PRISMA Deploy
+```
+npx prisma migrate deploy 
+```
+
 ## 3. Authentication
 Authentication is required for Admin access and dashboard. 
 For easier implementation this project uses *ZIQX AUTH*.
@@ -44,12 +49,10 @@ This will setup the project with required initial data and other troubleshooting
 Build Docker Image
 ```
 docker-compose build
-
 ```
 Run as docker
 ```
 docker run -d -p {LOCAL_PORT}:3000 sahityotsav-app
-
 ```
 
 ## FAQ

@@ -1,13 +1,12 @@
-import APPCONFIGS from "@/configs";
 import { FaYoutube } from "react-icons/fa";
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
-const FooterSocials = () => {
+const FooterSocials = ({configs}:{configs:any}) => {
     const SOCIAL_LINKS = [
-        {name: "Youtube", link:APPCONFIGS.socials?.youtube, icon: <FaYoutube/>},
-        {name: "Facebook", link:APPCONFIGS.socials?.facebook,  icon: <FaFacebook/>},
-        {name: "Instagram", link:APPCONFIGS.socials?.instagram,  icon: <FaInstagram/>},
-        {name: "Twitter", link:APPCONFIGS.socials?.twitter,  icon: <FaXTwitter/>},
+        {name: "Youtube", link:configs.youtube, icon: <FaYoutube/>},
+        {name: "Facebook", link:configs.facebook,  icon: <FaFacebook/>},
+        {name: "Instagram", link:configs.instagram,  icon: <FaInstagram/>},
+        {name: "Twitter", link:configs.twitter,  icon: <FaXTwitter/>},
     ];
     return (
         <section>
