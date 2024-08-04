@@ -2,7 +2,7 @@
 
 import { ZFormInput, ZSubmitButton } from "@/components/widgets/Form";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { updateConfigs } from "./func";
 import toast from "react-hot-toast";
 
@@ -10,9 +10,18 @@ const EditConfigs = ({ confs }: { confs: any }) => {
 
     const [loading, setLoading] = useState(false);
 
+
+ useEffect(()=>{
+    if(confs){
+        formik.setValues(confs);
+    }
+ },[confs]);
+
     const formik = useFormik({
         initialValues: confs,
         onSubmit: async (values) => {
+            console.log("On FOrmik SUbmit==>",values);
+            
             setLoading(true);
             const resp = await updateConfigs(values);
             if (resp.code === 0) {

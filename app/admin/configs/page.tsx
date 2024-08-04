@@ -3,6 +3,8 @@ import EditConfigs from "./EditConfigs";
 
 const ConfigsPage = async () => {
     const configs = await CoreConfigs.getCoreConfigs();
+    console.log("Configs==>",configs);
+    
     return (
         <div className="commonwidth">
            <EditConfigs confs={configs}/>
