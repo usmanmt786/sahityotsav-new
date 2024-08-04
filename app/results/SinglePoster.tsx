@@ -16,7 +16,7 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
 
 
   return (
-    <section className='w-full'>
+    <section className='w-full select-none'>
       <div className='flex  justify-center'>
         <section
           style={{

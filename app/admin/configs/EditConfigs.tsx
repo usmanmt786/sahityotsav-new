@@ -20,8 +20,6 @@ const EditConfigs = ({ confs }: { confs: any }) => {
     const formik = useFormik({
         initialValues: confs,
         onSubmit: async (values) => {
-            console.log("On FOrmik SUbmit==>",values);
-            
             setLoading(true);
             const resp = await updateConfigs(values);
             if (resp.code === 0) {

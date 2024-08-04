@@ -28,6 +28,7 @@ export async function addPoster(image: string,configs:{ theme: string, x: number
   const resp = await PosterModel.createPoster(image, configs.theme, configs.x, configs.y);
   if(resp){
     revalidatePath("/admin/posters");
+    revalidatePath("/results");
   }
   return resp;
 
@@ -37,6 +38,8 @@ export async function updatePosterTemplate(id: number,configs:{ theme: string, x
   const resp = await PosterModel.updatePosterTemplate(id, configs.theme, configs.x, configs.y);
   if(resp){
     revalidatePath("/admin/posters");
+    revalidatePath("/results");
+
   }
   return resp;
 
@@ -46,6 +49,8 @@ export async function deleteTemplate(id: number) {
   const resp = await PosterModel.deletePoster(id);
   if(resp){
     revalidatePath("/admin/posters"); 
+    revalidatePath("/results");
+
   }
   return resp;
 
