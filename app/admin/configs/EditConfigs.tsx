@@ -46,6 +46,25 @@ const EditConfigs = ({ confs }: { confs: any }) => {
                         name="venueDates"
                         placeHolder="Eg: August 10, 11, 12"
                     />
+
+<h1 className="text-2xl font-bold  text-primaryDark mt-4">Contact</h1>
+                    <ZFormInput formik={formik}
+                        formLabel="Contact 1"
+                        name="contact1"
+                        placeHolder="Eg: 9876543210"
+                    />
+                    <ZFormInput formik={formik}
+                        formLabel="Contact 2"
+                        name="contact2"
+                        placeHolder="Eg: 9876543210"
+                    />
+                    <ZFormInput formik={formik}
+                        formLabel="Venue Location"
+                        name="venueLocation"
+                        placeHolder="Eg: https://maps.google.com/..."
+                    />
+
+
                 </section>
 
                 <section>

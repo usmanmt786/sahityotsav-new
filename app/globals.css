@@ -53,3 +53,10 @@
   .swal2-container {
     z-index: 9999 !important;
   }
+
+  .contact-icon{
+    @apply bg-primaryDark text-white h-14 w-14 rounded-lg fullcenter;
+  }
+  .contact{
+    @apply text-2xl flex items-center font-bold text-primaryDark my-2 gap-x-4;
+  }

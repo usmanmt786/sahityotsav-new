@@ -12,6 +12,9 @@ export default class CoreConfigs {
     facebook:"",
     instagram:"",
     twitter:"",
+    contact1:"",
+    contact2:"",
+    venueLocation:""
             };
 
     const confs = await prisma?.config?.findMany();
