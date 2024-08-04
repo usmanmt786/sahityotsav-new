@@ -27,6 +27,8 @@ export default class CoreConfigs {
     return configs;
             
         } catch (error) {
+            console.error(error);
+
            return {code:1, message:"Failed to get core configs"} 
         }
     }

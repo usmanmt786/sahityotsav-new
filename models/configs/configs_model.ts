@@ -29,6 +29,8 @@ export class ConfigsModel{
 
             return {code:0, message:"Config updated"}
         } catch (error) {
+            console.error(error);
+            
             return {code:1, message:"Failed to Update Data"}
 
         }
