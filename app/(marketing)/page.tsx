@@ -7,6 +7,8 @@ import CoreConfigs from "@/models/configs/core_configs_model";
 const HomePage = async() => {
   const configs = await CoreConfigs.getCoreConfigs();
 
+  console.log("configs",configs);
+  
   return (
     <GuestLayout>
       <HomeHero configs={configs}/>
