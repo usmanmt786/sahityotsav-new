@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const GuestNavLinks = () => {
     const ITEMS = [
-        {name:"About", link:"/about"},
+        // {name:"About", link:"/about"},
         {name:"Contact", link:"/contact"},
         
     ];
