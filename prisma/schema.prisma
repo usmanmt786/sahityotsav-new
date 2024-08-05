@@ -21,10 +21,22 @@ model user {
   ziqx_id String
   name    String
   role    String @default("user")
+  team    team?  @relation(fields: [teamId], references: [id])
 
   added_at      DateTime @default(now())
   updated_at    DateTime @updatedAt
   delete_status Boolean  @default(false)
+  teamId        Int?
+}
+
+model team {
+  id            Int      @id @default(autoincrement())
+  name          String
+  code          String?
+  added_at      DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  delete_status Boolean  @default(false)
+  user          user[]
 }
 
 model user_invitation {
@@ -77,10 +89,10 @@ model program {
 }
 
 model participant {
-  id          Int    @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   name        String
   chest_no    String
-  father_name String
+  father_name String?
   place       String
 
   added_at            DateTime              @default(now())

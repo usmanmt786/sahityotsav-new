@@ -4,8 +4,8 @@ import ParticipantModel from "@/models/partiticipants/participant_model";
 import { revalidatePath } from "next/cache";
 
 
-export async function addParticipant(name:string,  place:string, fatherName:string, chestNo:string){
-    const resp = await ParticipantModel.addParticipant(name,  place, fatherName, chestNo);
+export async function addParticipant(name:string,  place:string,  chestNo:string){
+    const resp = await ParticipantModel.addParticipant(name,  place, chestNo);
     if(resp.code===0){
         revalidatePath("/admin/participants");
     }
@@ -13,9 +13,9 @@ export async function addParticipant(name:string,  place:string, fatherName:stri
 }
 
 export async function editParticipant(p:{
-    id:number, name:string,  place:string, fatherName:string, chestNo:string,
+    id:number, name:string,  place:string,  chestNo:string,
 }){
-    const resp = await ParticipantModel.updateParticipant(p.id, p.name,  p.place, p.fatherName, p.chestNo);
+    const resp = await ParticipantModel.updateParticipant(p.id, p.name,  p.place, p.chestNo);
     if(resp.code===0){
         revalidatePath("/admin/participants");
     }

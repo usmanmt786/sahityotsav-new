@@ -26,14 +26,14 @@ const AddParicipant = () => {
             name: '',
             place: '',
             chestNo: '',
-            fatherName: ''
+          
         },
         validationSchema: Yup.object({
             name: Yup.string().required("Name is Required"),
         }),
         onSubmit: async (values) => {
             setLoading(true);
-            const resp = await addParticipant(values.name, values.place, values.fatherName, values.chestNo);
+            const resp = await addParticipant(values.name, values.place, values.chestNo);
             if (resp.code === 0) {
                 toast.success(resp.message);
                 formik.resetForm();

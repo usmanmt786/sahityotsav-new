@@ -1,10 +1,14 @@
 import { FaList, FaUserShield } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { HiPaintBrush } from "react-icons/hi2";
+import { HiMiniRectangleGroup, HiPaintBrush } from "react-icons/hi2";
 import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdPerson, MdSettings } from "react-icons/md";
-import { TbPodium } from "react-icons/tb";
 
 const MENU_ITEMS = [
+    {
+        name: "Teams",
+        to: "/admin/teams",
+        icon: <HiMiniRectangleGroup />
+    },
     {
         name: "Categories",
         to: "/admin/categories",

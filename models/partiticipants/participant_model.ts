@@ -20,13 +20,12 @@ export default class ParticipantModel{
         return resp??[];
     }
 
-    static async   addParticipant(name:string,  place:string, fatherName:string, chestNo:string){
+    static async   addParticipant(name:string,  place:string,  chestNo:string){
         try {
            await prisma.participant.create({
                 data:{
                     name,
                     place,
-                    father_name:fatherName,
                     chest_no:chestNo
                 }
             });
@@ -39,7 +38,7 @@ export default class ParticipantModel{
         }
     }
 
-    static async   updateParticipant(id:number,name:string,  place:string, fatherName:string, chestNo:string){
+    static async   updateParticipant(id:number,name:string,  place:string,  chestNo:string){
         try {
            await prisma.participant.update({
             where:{
@@ -48,7 +47,6 @@ export default class ParticipantModel{
                 data:{
                     name,
                     place,
-                    father_name:fatherName,
                     chest_no:chestNo
                 }
             });
