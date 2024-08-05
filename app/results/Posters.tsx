@@ -12,14 +12,15 @@ const Posters = ({results,posters, }:{results:any, posters:any[], }) => {
             <section className="grid lg:grid-cols-3 gap-8">
                 {
                     posters.map((ps: any) => {
-                        
+                        const imgUrl = `${Constants.DRIVE_URL}uploads/posters/${ps.file_name}`;
                         return (
                             <div key={ps.id}>
+                               
                                 <SinglePoster 
                                 id={ps.id}
                                 theme={ps.theme}
                                 result={results}
-                                imageUrl={`${Constants.DRIVE_URL}uploads/posters/${ps.file_name}`}
+                                imageUrl={imgUrl}
                                 x={ps.body_locx} y={ps.body_locy}
                                 setDownloading={setDownloading}
                                 />

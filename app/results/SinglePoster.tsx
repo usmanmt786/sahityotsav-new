@@ -1,7 +1,8 @@
 "use client";
 
-import { downloadComponent } from '@/functions/utils/image';
+import { downloadCanvas } from '@/functions/utils/image';
 import { classNames } from 'primereact/utils';
+import { useRef } from 'react';
 
 const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
   { id: any, theme: string; result: any, imageUrl: string, x: number, y: number, setDownloading: any }) => {
@@ -13,6 +14,7 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
   const cat = program?.category?.name;
   const isDark = theme === "dark";
 
+  const posterRef = useRef(null);
 
 
   return (
@@ -26,8 +28,14 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
           }}
         >
 
+
+
+
+
           <div
             id={`${id}`}
+            ref={posterRef}
+
             style={{
               position: 'relative',
               width: '1000px',
@@ -36,11 +44,20 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
               transformOrigin: 'top left',
             }}
           >
-            <img
+            {/* <img
               src={imageUrl}
               alt="Poster"
               style={{ width: '1000px', height: '1000px' }}
-            />
+            /> */}
+            <div
+              style={{
+                backgroundImage: `url(${imageUrl})`,
+                width: '1000px',
+                height: '1000px',
+              }}
+            >
+
+            </div>
             <div
               style={{
                 position: 'absolute',
@@ -48,8 +65,20 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
                 top: `${y}px`,
               }}
             >
-              <h1 className='text-[3rem] font-bold'>{programName}</h1>
-              <h6 className='text-[1.5rem]'>{cat}</h6>
+              <h1 className=
+                {classNames({
+                  "text-[3rem] font-bold": true,
+                  "  text-white": isDark,
+                  " text-black": !isDark
+                })}
+              >{programName}</h1>
+              <h6 className=
+                {classNames({
+                  " text-[1.5rem]": true,
+                  "  text-white": isDark,
+                  " text-black": !isDark
+                })}
+              >{cat}</h6>
               <section className='mt-10'>
                 {
                   result && result.map((rs: any) => {
@@ -86,11 +115,10 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
       <div className="flex justify-center mt-4 ">
         <button
           className='btn gbg text-white'
-          onClick={ async() => {
+          onClick={async () => {
             setDownloading(true);
-            // wait 500 ms
-            await new Promise(resolve => setTimeout(resolve, 500));
-            await downloadComponent(`${id}`, `${cat} ${programName}`);
+
+            await downloadCanvas(posterRef, `${cat} ${programName}`);
 
             setDownloading(false);
           }}>Download</button>

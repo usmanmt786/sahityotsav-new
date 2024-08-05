@@ -1,28 +1,41 @@
-import { toPng } from 'html-to-image';
+import { toCanvas } from 'html-to-image';
 import download from "downloadjs";
+import {  RefObject } from 'react';
 
-export async function downloadComponent (id: string, name: string){
-  const element = document.getElementById(id);
-  if (element) {
-    const originalTransform = element.style.transform; // Save original transform
-    element.style.transform = "scale(1)";
-    
-    await new Promise(requestAnimationFrame);
 
-    // const computedStyle = getComputedStyle(element);
-    
-   await toPng(element,{
-      canvasHeight: 1000,
-      canvasWidth: 1000
-    })
-    .then(function (dataUrl) {
-      download(dataUrl, `${name}.png`);
-    }).finally(() => {
-      element.style.transform = originalTransform; // Restore original transform
-    });
 
-  }
-  await new Promise(resolve => setTimeout(resolve, 500));
 
-  return true;
-};
+
+export async function downloadCanvas(posterRef:RefObject<HTMLDivElement>, fileName:string) {
+  
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  await new Promise(requestAnimationFrame);
+
+  const canvas = await toCanvas(posterRef.current!, {
+    width: 1000,
+    height: 1000,
+    cacheBust:false,
+    style: {
+      transform: 'scale(1)',
+      transformOrigin: 'top left',
+      width: '1000px',
+      height: '1000px',
+    },
+  });
+
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise(requestAnimationFrame);
+
+  canvas.toBlob((blob) => {
+    if (blob) {
+      download(blob, `${fileName}.png`, 'image/png');
+    }
+  });
+ 
+ 
+
+
+ 
+}
+
