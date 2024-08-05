@@ -36,7 +36,7 @@ const Posters = ({results,posters, }:{results:any, posters:any[], }) => {
                 onHide={() => setDownloading(false)}
                 header=""
                 >
-                    <div className="fullcenter py-20">
+                    <div className="fullcenter text-center py-20">
                         <AiOutlineLoading3Quarters className="text-5xl mb-4 animate-spin"/>
                        <h2 className="font-bold text-xl"> Downloading Result Poster</h2>
                     </div>

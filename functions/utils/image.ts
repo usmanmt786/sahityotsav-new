@@ -6,6 +6,11 @@ export async function downloadComponent (id: string, name: string){
   if (element) {
     const originalTransform = element.style.transform; // Save original transform
     element.style.transform = "scale(1)";
+    
+    await new Promise(requestAnimationFrame);
+
+    // const computedStyle = getComputedStyle(element);
+    
    await toPng(element,{
       canvasHeight: 1000,
       canvasWidth: 1000
