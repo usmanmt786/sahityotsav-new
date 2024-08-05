@@ -7,7 +7,11 @@ import { revalidatePath } from "next/cache";
 export async function  updateConfigs(values:{k:string, v:string}) {
 
     let resp = {code:1, message:"Not Updated"};
-    for (const [key, value] of Object.entries(values)) {
+    const entries = Object.entries(values);
+    if(entries.length<1){
+        return {code:0, message:"Nothing to update"}
+    }
+    for (const [key, value] of entries) {
       
       const singleRes =   await ConfigsModel.updateConfig(key, value);
       resp = singleRes;

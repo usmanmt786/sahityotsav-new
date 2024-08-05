@@ -1,12 +1,15 @@
-const HomeAbout = () => {
+import Constants from "@/data/constants";
+
+const HomeAbout = ({configs}:{configs:any}) => {
+    const imgUrl = configs?.aboutImage?.length>3?`${Constants.SITE_IMG_URL}${configs?.aboutImage}`:"/images/logo.svg";
     return (
         <div className="commonwidth grid lg:grid-cols-2 py-20">
             <div className="fullcenter ">
-                <img src="/images/logo.svg"
+                <img src={imgUrl}
                 data-aos="fade-right"
-                className="w-52" alt="" />
+                className="w-[50vh] rounded-xl" alt="" />
             </div>
-            <div>
+            <div className="flex flex-col justify-center">
                 <h2 className="text-3xl font-bold mt-10 lg:mt-0"
                  data-aos="fade-up"
                  data-aos-delay="300"

@@ -17,13 +17,13 @@ const Footer = () => {
 
     return (
         <footer className="pt-10 bg-primary bg-opacity-10 border-t-8 border-t-primary">
-            <div className="  commonwidth flex justify-between ">
+            <div className="  commonwidth flex flex-col lg:flex-row justify-between ">
             <section>
                 <img src="/images/ssf.png" className="h-8" alt="" />
                 <h2 className="font-bold uppercase my-1">{configs.typeName} {APPCONFIGS.type}</h2>
 
             </section>
-            <section>
+            <section className="mt-10 lg:mt-0">
                 <FooterSocials configs={configs}/>
             </section>
            

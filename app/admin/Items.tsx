@@ -1,5 +1,6 @@
 import { FaList, FaUserShield } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { HiPaintBrush } from "react-icons/hi2";
 import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdPerson, MdSettings } from "react-icons/md";
 import { TbPodium } from "react-icons/tb";
 
@@ -60,6 +61,11 @@ const ADMIN_MENU = [
         name: "Configs",
         to: "/admin/configs",
         icon: <MdSettings />
+    },
+    {
+        name: "Customize",
+        to: "/admin/customize",
+        icon: <HiPaintBrush />
     },
 
 ];

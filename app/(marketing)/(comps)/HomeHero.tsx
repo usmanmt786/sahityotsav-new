@@ -1,23 +1,23 @@
-"use client";
 
 import APPCONFIGS from "@/configs";
-import { configSignal } from "@/controller/configs";
-import { useSignalEffect } from "@preact/signals-react";
-import { useState } from "react";
+import Constants from "@/data/constants";
 
 
-const HomeHero = () => {
-    const [configs, setConfigs] = useState<any>({});
+const HomeHero = ({configs}:{configs:any}) => {
+    const imgUrl = configs?.heroBg?.length>3?`${Constants.SITE_IMG_URL}${configs?.heroBg}`:null;
 
-    useSignalEffect(()=>{
-        setConfigs(configSignal.value);
-    })
+    const style = imgUrl? {backgroundImage: `url(${imgUrl})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+} : {
+        background: APPCONFIGS.style.heroColor??"#30352D"
+    };
     return (
-        <div className=" h-[89vh] py-20 fullcenter"
-        style={{
-            background: APPCONFIGS.style.heroColor??"#30352D"
-        }}
+        <div className=" h-[89vh] py-20 fullcenter relative "
+        style={style}
         >
+           {imgUrl &&  <div className="absolute top-0 bottom-0 right-0 left-0 bg-opacity-40 bg-black"></div> }
             
             <section className="commonwidth grid lg:grid-cols-2">
                 <div className="fullcenter order-2 lg:order-1">
