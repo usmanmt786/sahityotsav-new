@@ -8,7 +8,7 @@ const LiveStream = () => {
            <section className="commonwidth">
            <div>
            <section className="inline-flex items-center animate-pulse gap-x-2 mb-2 border px-4 py-1 rounded-full cursor-pointer">
-           <BsBroadcast className="text-xl "/> LIVE
+           <BsBroadcast className="text-xl "/>          LIVE
            </section>
                 <h1 className="text-3xl lg:text-5xl font-bold">Catch the Live Stream </h1>
                 <p className="opacity-80">
