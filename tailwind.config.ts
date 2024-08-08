@@ -12,6 +12,9 @@ const config: Config = {
     colors:{
       primary: APPCONFIGS.style.primaryColor,
       primaryDark: APPCONFIGS.style.primaryDark
+     },
+     backgroundImage:{
+      gbg: `linear-gradient(320deg,${APPCONFIGS.style.primaryColor},${APPCONFIGS.style.primaryDark})`
      }
    }
   },

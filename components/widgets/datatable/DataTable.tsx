@@ -56,7 +56,7 @@ onClick={()=>{
                                 {prop.columns.map((col,index2)=>{
                                                             const key1 = col.value.split('.')[0];
                                                             const key2 = col.value.split('.')[1];
-                                                            const finalValue = key2? row[key1][key2]: row[key1];
+                                                            const finalValue = !row[key1]?"--": key2? row[key1][key2]: row[key1];
                                     return <td key={index2} className={`${col.className??'text-center'} `}>{finalValue}</td>
                                 })}
 

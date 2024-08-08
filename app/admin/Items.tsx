@@ -1,7 +1,7 @@
 import { FaList, FaUserShield } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { HiMiniRectangleGroup, HiPaintBrush } from "react-icons/hi2";
-import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdPerson, MdSettings } from "react-icons/md";
+import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdOutlineOndemandVideo, MdPerson, MdSettings } from "react-icons/md";
 
 const MENU_ITEMS = [
     {
@@ -48,6 +48,12 @@ const MENU_ITEMS = [
         name: "Posters",
         to: "/admin/posters",
         icon: <MdOutlineImageAspectRatio />
+
+    },
+    {
+        name: "Videos",
+        to: "/admin/videos",
+        icon: <MdOutlineOndemandVideo />
 
     },
    

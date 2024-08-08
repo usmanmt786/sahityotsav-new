@@ -13,6 +13,12 @@ export default class ParticipantModel{
                     name:true,
                     place:true,
                     chest_no:true,
+                    team:{
+                        select:{
+                            id:true,
+                            name:true
+                        }
+                    }
 
                 }
             }
@@ -20,13 +26,14 @@ export default class ParticipantModel{
         return resp??[];
     }
 
-    static async   addParticipant(name:string,  place:string,  chestNo:string){
+    static async   addParticipant(name:string,  team:number,  chestNo:string){
         try {
            await prisma.participant.create({
                 data:{
                     name,
-                    place,
-                    chest_no:chestNo
+                   teamId:team,
+                    chest_no:chestNo,
+                    
                 }
             });
             return {code:0, message:"Participant created"}
@@ -38,7 +45,7 @@ export default class ParticipantModel{
         }
     }
 
-    static async   updateParticipant(id:number,name:string,  place:string,  chestNo:string){
+    static async   updateParticipant(id:number,name:string,  team:number,  chestNo:string){
         try {
            await prisma.participant.update({
             where:{
@@ -46,8 +53,15 @@ export default class ParticipantModel{
             },
                 data:{
                     name,
-                    place,
-                    chest_no:chestNo
+             team:{
+                connect:{
+                    id:team
+                   
+                    }
+                
+             }       ,
+                    chest_no:chestNo,
+                    
                 }
             });
             return {code:0, message:"Participant Updated"}

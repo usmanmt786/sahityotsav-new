@@ -1,19 +1,27 @@
 "use client";
 
 import ZDialog from "@/components/common/ZDialog";
-import { ZFormInput, ZFormTextArea, ZSubmitButton } from "@/components/widgets/Form";
+import { ZFormInput, ZFormSelect, ZFormTextArea, ZSubmitButton } from "@/components/widgets/Form";
 import { useSignalEffect } from "@preact/signals-react";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { rowUpdateSignal } from "@/controller/row_actions";
 import { editParticipant } from "./func";
 import * as Yup from "yup";
 
 
-const EditParticipant = () => {
+const EditParticipant = ({teams}:{teams:any[]}) => {
     const [item, setItem] = useState<any>(null);
     const [loading, setLoading] = useState(false);
+
+    const [teamsList, setTeams] = useState<any[]>([]);
+
+    useEffect(()=>{
+        if(teams){
+            setTeams(teams)
+        }
+    },[teams])
 
 
     useSignalEffect(()=>{
@@ -26,9 +34,8 @@ const EditParticipant = () => {
             formik.setValues({
                 id: data.id,
                 name:data.name,
-                place:data.place,
+                team: data.team?.id,
                 chestNo:data.chest_no,
-                fatherName:data.father_name
             });
         }
     })
@@ -37,9 +44,9 @@ const EditParticipant = () => {
         initialValues:{
             id: item?.id,
             name:'',
-            place:'',
+            team:0,
             chestNo:'',
-            fatherName:''
+            
             
         },validationSchema:  Yup.object({
             name:Yup.string().required("Name is Required"),
@@ -71,17 +78,14 @@ const EditParticipant = () => {
                 name="name"
                 />
                 
-                <ZFormInput
-                formik={formik}
-                formLabel="Place"
-                name="place"
-                />
+                <ZFormSelect
+                    formik={formik}
+                    formLabel="Team"
+                    name="team"
+                    options={teamsList.map((team:any)=>({label:team.name, value:team.id}))}
+                    />
 
-<ZFormInput
-                formik={formik}
-                formLabel="Father Name"
-                name="fatherName"
-                />
+
 
 <ZFormInput
                 formik={formik}

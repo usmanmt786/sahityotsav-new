@@ -30,13 +30,14 @@ model user {
 }
 
 model team {
-  id            Int      @id @default(autoincrement())
+  id            Int           @id @default(autoincrement())
   name          String
   code          String?
-  added_at      DateTime @default(now())
-  updated_at    DateTime @updatedAt
-  delete_status Boolean  @default(false)
+  added_at      DateTime      @default(now())
+  updated_at    DateTime      @updatedAt
+  delete_status Boolean       @default(false)
   user          user[]
+  participant   participant[]
 }
 
 model user_invitation {
@@ -89,16 +90,17 @@ model program {
 }
 
 model participant {
-  id          Int     @id @default(autoincrement())
-  name        String
-  chest_no    String
-  father_name String?
-  place       String
-
+  id                  Int                   @id @default(autoincrement())
+  name                String
+  chest_no            String
+  father_name         String?
+  place               String?
+  team                team?                 @relation(fields: [teamId], references: [id])
   added_at            DateTime              @default(now())
   updated_at          DateTime              @updatedAt
   delete_status       Boolean               @default(false)
   program_participant program_participant[]
+  teamId              Int?
 }
 
 model program_participant {
@@ -132,4 +134,11 @@ model posters {
   footer_locy Int      @default(0)
   added_at    DateTime @default(now())
   updated_at  DateTime @updatedAt
+}
+
+model ytvideo {
+  id       Int      @id @default(autoincrement())
+  title    String
+  yt_id    String
+  added_at DateTime @default(now())
 }
