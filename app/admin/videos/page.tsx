@@ -13,7 +13,7 @@ const VideosIndex = async () => {
                 videos.length<1 ? <div className="fullcenter h-[30vh] border my-2 bg-gray-50">No Videos Found</div>:
                 <section className="grid lg:grid-cols-4 gap-8">
                     {
-                        videos.map((vid)=>{
+                        videos.map((vid:any)=>{
                             return <div key={vid.id} className="relative border rounded-xl group">
                                 <div className="w-full rounded-t-xl h-40"
                                 style={{
