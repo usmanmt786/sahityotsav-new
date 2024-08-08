@@ -53,7 +53,7 @@ const AddVideo = () => {
             <ZDialog
             visible={show}
             onHide={() => setShow(false)}
-        header="Add Team"
+        header="Add Video"
         >
             <form onSubmit={formik.handleSubmit}>
                 <ZFormInput

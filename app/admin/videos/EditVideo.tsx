@@ -73,7 +73,6 @@ const EditVideo = () => {
                 name="ytId"
                 placeHolder="Eg: nvQf_v07hMA"
                 />
-             
                 
                 <div className="fullcenter">
                     <ZSubmitButton

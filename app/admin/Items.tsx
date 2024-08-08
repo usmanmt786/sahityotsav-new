@@ -1,4 +1,4 @@
-import { FaList, FaUserShield } from "react-icons/fa";
+import { FaList, FaListOl, FaUserShield } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { HiMiniRectangleGroup, HiPaintBrush } from "react-icons/hi2";
 import { MdCategory, MdChecklistRtl, MdOutlineEventSeat, MdOutlineImageAspectRatio, MdOutlineOndemandVideo, MdPerson, MdSettings } from "react-icons/md";
@@ -43,6 +43,13 @@ const MENU_ITEMS = [
         name: "Results",
         to: "/admin/results",
         icon: <MdChecklistRtl />
+
+    },
+    {
+        name: "Team Point",
+        to: "/admin/teampoint",
+        icon: <FaListOl />
+       
 
     },
     {

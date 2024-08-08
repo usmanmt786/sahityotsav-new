@@ -87,6 +87,7 @@ model program {
   categoryId          Int
   stageId             Int?
   program_participant program_participant[]
+  ytvideo             ytvideo[]
 }
 
 model participant {
@@ -137,8 +138,18 @@ model posters {
 }
 
 model ytvideo {
-  id       Int      @id @default(autoincrement())
-  title    String
-  yt_id    String
-  added_at DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  title     String
+  yt_id     String
+  prgram    program? @relation(fields: [programId], references: [id])
+  added_at  DateTime @default(now())
+  programId Int?
+}
+
+model team_point {
+  id         Int      @id @default(autoincrement())
+  team_id    Int
+  point      Int
+  added_at   DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
