@@ -92,7 +92,7 @@ const EditResultPoster = ({ poster, onHide }: { poster: any, onHide: any }) => {
                     >
                         Delete
                     </button>
-                    <button className=" gbg btn text-white"
+                    <button className=" bg-gbg btn text-white"
                         onClick={handleSubmit}
                     >{loading ? "Updating Template..." : "Update Template"}</button>
 

@@ -5,7 +5,7 @@ import { IoBan } from "react-icons/io5";
 const NoAccess = () => {
     return (
         <GuestLayout>
-            <main className="h-[70vh] fullcenter select-none">
+            <main className="h-[70vh] fullcenter select-none p-5 text-center">
             <IoBan className="text-6xl text-primary my-3" />
 
                 <h1 className="text-xl">Unauthorized Access</h1>

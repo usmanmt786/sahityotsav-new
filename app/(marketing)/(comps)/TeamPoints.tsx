@@ -1,5 +1,7 @@
 "use client";
 
+import { MdArrowForwardIos } from "react-icons/md";
+
 
 const TeamPoints = ({points}:{points:any[]}) => {
     const firstThree = points.slice(0,3);
@@ -25,8 +27,10 @@ const TeamPoints = ({points}:{points:any[]}) => {
                 <div className="bg-primary bg-opacity-30 p-5 rounded-xl">
                 {
                 remaining.map((item)=>{
-                    return <div key={item.id} className="flex items-center justify-between">
-                        <p className="text-xl">{item.name}</p>
+                    return <div key={item.id} className="flex items-center justify-between mb-2">
+                        <p className="text-lg flex gap-x-2 items-center ">
+                        <MdArrowForwardIos className="text-primaryDark"/>
+                            {item.name}</p>
                         <p className="font-bold">{item.point}</p>
                     </div>
                 })

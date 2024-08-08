@@ -8,7 +8,7 @@ const ResultSection = ({configs}:{configs:any}) => {
   const imgUrl = configs?.resultImage?.length>3?`${Constants.SITE_IMG_URL}${configs?.resultImage}`:"/images/result.png";
 
     return (
-        <div className="bg-primary">
+        <div className="bg-primary text-white ">
             <section 
             className="commonwidth py-20 grid lg:grid-cols-2">
               <div className="flex flex-col justify-center items-center lg:items-start">

@@ -38,7 +38,7 @@
   }
 
   .gbg {
-    background: linear-gradient(320deg,#C7D9A7,#7D9C43);
+    @apply bg-gbg;  
     
   }
 

@@ -10,7 +10,7 @@ const AdminLayout = (props:any) => {
     return (
         <div>
             <AOSClient/>
-            <section className="bg-primary py-4 " data-aos="fade-down">
+            <section className="bg-primary py-4 text-white" data-aos="fade-down">
                 <nav className="flex justify-between items-center commonwidth">
                     <Link href={`/admin`} className="flex items-center">
                     <MdOutlineAdminPanelSettings className="text-4xl mr-2"/>
