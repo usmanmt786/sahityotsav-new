@@ -18,7 +18,8 @@ export default class CoreConfigs {
     venueLocation:"",
     heroBg:"",
     aboutImage:"",
-    resultImage:""
+    resultImage:"",
+    brochure:""
             };
 
     const confs = await prisma?.config?.findMany();

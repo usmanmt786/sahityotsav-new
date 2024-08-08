@@ -4,8 +4,7 @@ import { useFormik } from "formik";
 import ImageUpload from "./Image";
 import { useState } from "react";
 import { isFile } from "@/functions/utils/file";
-import { uploadFile } from "@/drive/upload";
-import { uploadImage } from "../posters/func";
+
 import { uploadCustomizeImage } from "./func";
 import { ZSubmitButton } from "@/components/widgets/Form";
 import { updateConfigs } from "../configs/func";
@@ -96,7 +95,7 @@ const CustomizeForm = ({configs}:{configs:any}) => {
                 setResultImg(e);
             }}/>
 
-            <ZSubmitButton loading={loading} loadText="Saving Changes..." text="Update Site"/>
+            <ZSubmitButton loading={loading} loadText="Saving Changes..." text="Update Images"/>
 
         </form>
     );
