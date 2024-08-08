@@ -7,6 +7,10 @@ import { MdArrowForwardIos } from "react-icons/md";
 const TeamPoints = ({points}:{points:any[]}) => {
     const firstThree = points.slice(0,3);
     const remaining  = points.slice(3);
+
+    if(firstThree.some(x=>x.point<1)){
+        return <></>
+    }
     return (
         <div className="commonwidth py-14">
             <h1 className="text-3xl font-bold mb-4 border-b pb-2 flex items-center gap-x-3">Team Score
@@ -30,7 +34,7 @@ const TeamPoints = ({points}:{points:any[]}) => {
                 })
             }
                 </div>
-                <div className="bg-primary bg-opacity-30 p-5 rounded-xl">
+                <div className="bg-primary bg-opacity-10 p-5 rounded-xl ring-2 ring-primary">
                 {
                 remaining.map((item)=>{
                     return <div key={item.id} className="flex items-center justify-between mb-2">

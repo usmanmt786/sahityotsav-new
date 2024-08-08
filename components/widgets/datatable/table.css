@@ -3,7 +3,7 @@ width: 100%;
 }
 
 .table thead{
-    @apply bg-primary rounded-t-xl;
+    @apply bg-primary rounded-t-xl text-white;
 }
 
 
