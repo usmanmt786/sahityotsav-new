@@ -13,7 +13,7 @@ const YoutubeVideos = async() => {
                 Videos are coming soon</div>:
                <section className="grid lg:grid-cols-4 gap-8">
                {
-                   videos.map((vid)=>{
+                   videos.map((vid:any)=>{
                        return <Link key={vid.id}
                        href={`https://www.youtube.com/watch?v=${vid.yt_id}`}
                        className=" border rounded-xl group ring-primaryDark hover:ring-2 duration-300">
