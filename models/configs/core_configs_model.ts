@@ -36,4 +36,36 @@ export default class CoreConfigs {
            return {code:1, message:"Failed to get core configs"} 
         }
     }
+
+
+    static async getLiveConfigs(){
+        try {
+            let configs:any = {
+                live1:"",
+                live2:"",
+                live3:"",
+  
+            };
+
+    const confs = await prisma?.config?.findMany({
+        where:{
+            name:{
+                in:["live1", "live2", "live3"]
+            }
+        }
+    });
+
+    if(confs){
+        confs.map((c)=>{
+            configs[c.name] = c.value;
+        })
+    }
+    return configs;
+            
+        } catch (error) {
+            console.error(error);
+
+           return {code:1, message:"Failed to get core configs"} 
+        }
+    }
 }
