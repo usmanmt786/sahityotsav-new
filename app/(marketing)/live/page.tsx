@@ -37,3 +37,4 @@ const LiveIndex = async() => {
 }
 
 export default LiveIndex;
+export const revalidate = 30;
