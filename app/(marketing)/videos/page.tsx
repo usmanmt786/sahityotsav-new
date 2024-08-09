@@ -39,3 +39,5 @@ const YoutubeVideos = async() => {
 }
 
 export default YoutubeVideos;
+
+export const revalidate = 30;
