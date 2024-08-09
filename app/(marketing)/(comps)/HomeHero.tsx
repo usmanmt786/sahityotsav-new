@@ -21,6 +21,7 @@ const HomeHero = ({configs}:{configs:any}) => {
             
             <section className="commonwidth grid lg:grid-cols-2">
                 <div className="fullcenter order-2 lg:order-1">
+                    <img src="/images/ssf-w.png" className="z-[999] h-10 mb-1" alt="" />
                     <h2 className="uppercase font-bold text-center text-white text-2xl mb-5"
                     data-aos="zoom-in"
                     >{configs.typeName} {APPCONFIGS.type}</h2>
