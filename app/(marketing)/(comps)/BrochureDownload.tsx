@@ -14,7 +14,7 @@ const BrochureDownload = ({configs}:{configs:any}) => {
             <div className="mt-6">
             <a href={`${Constants.DRIVE_URL}uploads/site/${configs?.brochure}`}
             target="_blank"
-            className="bg-primaryDark text-white px-6  py-3 rounded-md shadow-xl"
+            className="bg-primaryDark text-white px-6 inline-flex text-xs lg:text-base  py-3 rounded-md shadow-xl"
             >
             Download Brochure
             </a>
