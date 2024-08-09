@@ -12,7 +12,7 @@ const GuestNavLinks = () => {
     const ITEMS = [
         // {name:"About", link:"/about"},
         {name:"Videos", link:"/videos"},
-        {name:"LIVE Stream", link:"/live"},
+        {name:"Live Stream", link:"/live"},
         {name:"Contact", link:"/contact"},
 
 
@@ -49,7 +49,7 @@ const GuestNavLinks = () => {
                 ))
             }
             <Link href={'/results'}
-            className="bg-white text-primaryDark px-2 py-2 rounded-lg" 
+            className="bg-white text-primaryDark px-4 font-bold py-2 rounded-lg" 
             >Results</Link>
         </div>
 
