@@ -16,10 +16,11 @@ const HomePage = async() => {
   return (
     <GuestLayout>
       <HomeHero configs={configs}/>
+      <LiveStream/>
       <HomeAbout  configs={configs}/>
       <ResultSection  configs={configs}/>
       <TeamPoints points={teamPoint}/>
-      <LiveStream/>
+      
       <BrochureDownload configs={configs}/>
     </GuestLayout>
   );
