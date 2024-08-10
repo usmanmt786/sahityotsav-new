@@ -9,7 +9,6 @@ const Participants = async () => {
 
     const data = await ParticipantModel.getAllParticipants();
     const teams = await TeamModel.getAllTeam();
-console.log(data);
 
     return (
         <main  className="commonwidth">
