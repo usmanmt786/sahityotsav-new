@@ -4,6 +4,10 @@ import EditUser from "./Edit";
 import DeleteUser from "./Delete";
 import UserModel from "@/models/users/user_model";
 import InvitationLink from "./InvitationLink";
+import UserItems from "./Items";
+import { rowUpdateSignal } from "@/controller/row_actions";
+import { MdAdd } from "react-icons/md";
+import UsersHeader from "./Header";
 
 
 const Participants = async () => {
@@ -12,17 +16,14 @@ const Participants = async () => {
 
     return (
         <main  className="commonwidth">
-            <DataTable 
-            title="Access Users"
-            type="user"
-            columns={[
-                {label:"Name", value:"name"},
-                {label:"Role", value:"role"},
-                {label:"Status", value:"status"},
-            ]} data={data}/>
+           <UsersHeader/>
+
+            <UserItems users={data}/>
+            
           <AddUser/>
           <EditUser/>
           <DeleteUser/>
+          <br />
           <InvitationLink/>
         </main>
     );
