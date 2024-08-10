@@ -45,7 +45,7 @@ const ResultsSection = ({ cats, posters }: { cats: any[], posters: any[] }) => {
         <div className="w-full">
 
             <form onSubmit={formik.handleSubmit}
-                className="bg-primary w-full lg:w-5/12 mx-auto my-10 bg-opacity-10 ring-2 ring-primary p-8 rounded-xl">
+                className="bg-primary w-full lg:w-5/12 mx-auto my-10 bg-opacity-10 lg:ring-2 ring-primary p-8 rounded-xl">
                 <h1 className="text-2xl font-bold text-primaryDark">Check Results</h1>
                 <ZFormSelect formik={formik} formLabel="Category" name="category"
                     options={cats.map(cat => ({ label: cat.name, value: cat.id }))} filter
