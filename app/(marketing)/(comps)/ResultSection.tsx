@@ -16,10 +16,9 @@ const ResultSection = ({configs}:{configs:any}) => {
               <h2 className="uppercase text-2xl font-bold"  data-aos="fade-up"  data-aos-delay="400">{configs.typeName} {APPCONFIGS.type}</h2>
               <h4 className="text-4xl font-thin"  data-aos="fade-up"  data-aos-delay="600">Sahityotsav {APPCONFIGS.year}</h4>
               <div className="mt-4"  data-aos="fade-up"  data-aos-delay="800">
-              <Link href={'/results'} className="px-4 py-3 text-white rounded inline-flex items-center gap-x-3 group"
-               style={{
-                background: APPCONFIGS.style.heroColor??"#30352D"
-            }}
+              <Link href={'/results'} 
+              className="px-4 py-3 bg-white text-primaryDark font-bold rounded inline-flex items-center gap-x-3 group"
+              
               >Check Results
               <FaArrowRight className="group-hover:translate-x-1 duration-300"/>
 

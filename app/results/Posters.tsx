@@ -6,6 +6,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Posters = ({results,posters, }:{results:any, posters:any[], }) => {
     const [downloading, setDownloading] = useState(false);
+    if(!posters) return <></>;
     return (
         <div className="mb-8">
             <h1 className="text-2xl mb-6">Posters</h1>

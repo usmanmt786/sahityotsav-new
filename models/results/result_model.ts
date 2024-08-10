@@ -69,7 +69,11 @@ export default class ResultModel {
                     select: {
                         id: true,
                         name: true,
-                        place: true,
+                        team:{
+                            select:{
+                                name:true
+                            }
+                        },
                         chest_no: true,
 
                     },

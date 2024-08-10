@@ -101,7 +101,7 @@ const SinglePoster = ({ id, theme, result, imageUrl, x, y, setDownloading }:
                             "text-white/80": isDark,
                             "text-black": !isDark
                           })}
-                        >{partic?.place}</h6>
+                        >{partic?.team?.name}</h6>
                       </div>
                     </div>
                   })
