@@ -38,8 +38,8 @@ const imgUrl  = isFile(cur) ? URL.createObjectURL(cur) : cur?.length>2?`${Consta
         <div className="my-2">
             <h6 className="text-gray-400  mb-1">{labelText}</h6>
             <label htmlFor={id}
-            className="h-28 border border-primaryDark rounded-lg fullcenter 
-            border-dashed bg-primary bg-opacity-10 text-gray-500 cursor-pointer text-sm"
+            className="h-36 border border-primaryDark rounded-lg fullcenter border-dashed bg-primary 
+            bg-opacity-10  cursor-pointer "
             style={{
                 backgroundImage: `url(${imgUrl})`,
                 backgroundSize: 'cover',
@@ -47,9 +47,11 @@ const imgUrl  = isFile(cur) ? URL.createObjectURL(cur) : cur?.length>2?`${Consta
                 backgroundRepeat: 'no-repeat',
             }}
             >
-                <TiImage className="text-2xl" />
+               <div className={`fullcenter px-8 border py-2 rounded-full text-xs ${imgUrl && 'bg-gray-100 bg-opacity-80'}`}>
+               <TiImage className="text-2xl" />
 
-                <span>Choose Image</span>
+<span>{imgUrl?'Change Image':'Choose Image'}   </span>
+               </div>
             </label>
             {error && <div className="inline-block bg-red-100 text-red-600 text-xs px-2 py-1 mt-2">{error}</div>}
             <input type="file" 
