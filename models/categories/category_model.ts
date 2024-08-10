@@ -24,6 +24,22 @@ export default class CategoryModel{
         return resp??[];
     }
 
+    static async addCategory(name:string){
+        try {
+            await prisma.category.create({
+              
+                data:{
+                    name,
+                   
+                }
+            });
+            return {code:0, message:"Category Created"}
+        } catch (error) {
+            console.error(error);
+            return {code:1, message:"Error Creating category"}
+            
+        }
+    }
     static async updateCategory(id:number, name:string, description:string){
         try {
             await prisma.category.update({

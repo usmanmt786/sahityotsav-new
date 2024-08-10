@@ -1,6 +1,7 @@
 import DataTable from "@/components/widgets/datatable/DataTable";
 import CategoryModel from "@/models/categories/category_model";
 import EditCategory from "./Edit";
+import AddCategory from "./Add";
 
 const CategoriesHome = async () => {
 
@@ -17,6 +18,7 @@ const CategoriesHome = async () => {
               
             ]} data={cats}/>
             <EditCategory/>
+            <AddCategory/>
           
         </main>
     );
