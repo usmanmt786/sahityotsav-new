@@ -2,8 +2,10 @@
 import { useState } from "react";
 import AddParticpationForm from "./AddParticpation";
 import { Dropdown } from "primereact/dropdown";
-import { getCurProgramParicipants } from "./func";
-import { MdPerson } from "react-icons/md";
+import { deleteParticipation, getCurProgramParicipants } from "./func";
+import { MdDelete, MdPerson } from "react-icons/md";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const ViewProgramlist = ({ item,  }: { item: any, }) => {
     const [showAdd, setShowAdd] = useState(false);
@@ -18,6 +20,23 @@ const ViewProgramlist = ({ item,  }: { item: any, }) => {
         }
     }
 
+    async function deletePrList(particId:number, prId:number){
+       const accept = await Swal.fire({
+        title:"Delete Paricipation",
+        text:"Do you want to remove this participant?",
+        showCancelButton:true,
+        confirmButtonText:"Yes Remove"
+       });
+       if(accept.isConfirmed){
+        const resp = await deleteParticipation(particId, prId);
+        if(resp){
+            getParticipants(prId);
+            toast.success("Participant Deleted");
+        }else{
+            toast.error("Failed to delete participant")
+        }
+       }
+    }
     return (
         <div>
 
@@ -52,11 +71,21 @@ const ViewProgramlist = ({ item,  }: { item: any, }) => {
                     </div> : <section className="py-4">
                         {
                             curEventParticipants.map((i: any) => {
-                                return <div className="my-2 flex items-center px-2 py-3 rounded bg-gray-50 border ">
+                                return <div className="my-2 flex justify-between items-center px-2 py-3 rounded bg-gray-50 border ">
+                                    <div className="flex  items-center">
                                     <MdPerson className="text-primaryDark text-lg mr-2" />
                                     <div>
                                         {i?.participant?.name} <span className="mx-1 text-xs">{i?.participant?.place}</span> ({i?.participant?.chest_no})
 
+                                    </div>
+                                    </div>
+                                    <div>
+                                        
+                                        <button className="bg-red-600 text-white p-2 rounded-lg"
+                                        onClick={()=>{
+                                            deletePrList(i?.participant?.id,program?.id,)
+                                        }}
+                                        ><MdDelete/> </button>
                                     </div>
                                 </div>
                             })

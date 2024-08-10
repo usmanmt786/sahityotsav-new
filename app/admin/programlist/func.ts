@@ -20,3 +20,10 @@ return resp
     
     return resp
      }
+
+
+     export async function deleteParticipation(particId:number, prId:number){
+        
+        const resp = await ProgramlistModel.deleteParticipant(particId, prId);
+        return resp;
+     }

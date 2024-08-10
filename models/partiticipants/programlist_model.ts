@@ -44,4 +44,18 @@ export default class ProgramlistModel{
         return false;
        }
     }
+
+    static async deleteParticipant(particId:number, prId:number){
+        try {
+            await prisma.program_participant.deleteMany({
+                where:{
+                    participantId:particId,
+                    programId:prId
+                }
+             });
+             return true;
+            } catch (error) {
+             return false;
+            }
+    }
 }
