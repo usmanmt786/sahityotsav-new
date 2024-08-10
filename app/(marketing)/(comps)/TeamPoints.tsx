@@ -20,11 +20,11 @@ const TeamPoints = ({points}:{points:any[]}) => {
 
             </h1>
             <section className="grid lg:grid-cols-2 gap-8 lg:gap-24">
-                <div className="flex items-center">
-                <section>
+                <div className="flex items-center ">
+                <section className="w-full">
                 {
                 firstThree.map((item, index)=>{
-                    return <div key={item.id} className="flex justify-between items-center text-xl">
+                    return <div key={item.id} className="flex justify-between items-center text-xl border-b pb-2">
                         <section className="flex items-center">
                         <div className="bg-primaryDark fullcenter rounded-lg my-2 h-10 w-10 font-bold mr-2 text-white">{index+1}</div>
                         <div className="mr-5">{item.name}</div>
@@ -39,7 +39,7 @@ const TeamPoints = ({points}:{points:any[]}) => {
                 <div className="bg-primary bg-opacity-10 p-5 rounded-xl ring-2 ring-primary">
                 {
                 remaining.map((item)=>{
-                    return <div key={item.id} className="flex items-center justify-between mb-2">
+                    return <div key={item.id} className="flex items-center justify-between mb-2 border-white border-b pb-2">
                         <p className="text-lg flex gap-x-2 items-center ">
                         <MdArrowForwardIos className="text-primaryDark"/>
                             {item.name}</p>
