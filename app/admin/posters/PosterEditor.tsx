@@ -28,11 +28,9 @@ const PosterEditor = ({curTheme,x,y, imageUrl, onChange }:{curTheme:string,x:num
   const scale = 0.4; // Scale down the image to make it manageable in the editor
 
 function switchContentImage(){
-    if(theme==="light"){
-        setTheme("dark");
-    }else{
-        setTheme("light");
-    }
+  const newtheme = theme==="light"?"dark":"light";
+   setTheme(`${newtheme}`);
+   onChange(newtheme,textPosition.x,textPosition.y);
 }
 
   return (

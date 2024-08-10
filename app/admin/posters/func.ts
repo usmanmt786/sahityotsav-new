@@ -35,6 +35,7 @@ export async function addPoster(image: string,configs:{ theme: string, x: number
 }
 
 export async function updatePosterTemplate(id: number,configs:{ theme: string, x: number, y: number}) {
+  
   const resp = await PosterModel.updatePosterTemplate(id, configs.theme, configs.x, configs.y);
   if(resp){
     revalidatePath("/admin/posters");

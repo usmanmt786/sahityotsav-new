@@ -16,9 +16,7 @@ const EditResultPoster = ({ poster, onHide }: { poster: any, onHide: any }) => {
         y:  100
     });
 
-    useEffect(() => {
-        console.log(poster);
-        
+    useEffect(() => {        
         setPosterConfigs({
             theme: poster?.theme ?? "light",
             x: poster?.body_locx ?? 100,
@@ -73,12 +71,13 @@ const EditResultPoster = ({ poster, onHide }: { poster: any, onHide: any }) => {
             >
 
 
+
                 <PosterEditor
                     curTheme={posterConfigs.theme}
                     x={posterConfigs.x}
                     y={posterConfigs.y}
                     imageUrl={`${Constants.DRIVE_URL}uploads/posters/${poster?.file_name}`}
-                    onChange={(theme: string, x: number, y: number) => {
+                    onChange={(theme: string, x: number, y: number) => {                        
                         setPosterConfigs({
                             theme, x, y
                         });

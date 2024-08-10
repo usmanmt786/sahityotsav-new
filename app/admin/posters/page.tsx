@@ -5,6 +5,7 @@ import PostersGrid from "./PostersGrid";
 const PostersIndex = async () => {
 
     const posters = await PosterModel.getResultPosters();
+//console.log(posters);
 
     return (
         <div className="commonwidth">

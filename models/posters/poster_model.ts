@@ -36,7 +36,9 @@ export default class PosterModel {
 
     static async updatePosterTemplate(id:number,theme: string, x: number, y: number){
         try {
-            await prisma.posters.update(
+            
+
+         await prisma.posters.update(
                 
                 {
 where:{
@@ -50,6 +52,7 @@ where:{
 
                }
            });
+           
            return true;
            
        } catch (error) {
