@@ -19,6 +19,7 @@ export default class CoreConfigs {
     heroBg:"",
     aboutImage:"",
     resultImage:"",
+    homeAbout:"",
     brochure:""
             };
 
