@@ -20,7 +20,8 @@ const TeamPoints = ({points}:{points:any[]}) => {
 
             </h1>
             <section className="grid lg:grid-cols-2 gap-8 lg:gap-24">
-                <div>
+                <div className="flex items-center">
+                <section>
                 {
                 firstThree.map((item, index)=>{
                     return <div key={item.id} className="flex justify-between items-center text-xl">
@@ -33,6 +34,7 @@ const TeamPoints = ({points}:{points:any[]}) => {
                     </div>
                 })
             }
+                </section>
                 </div>
                 <div className="bg-primary bg-opacity-10 p-5 rounded-xl ring-2 ring-primary">
                 {
