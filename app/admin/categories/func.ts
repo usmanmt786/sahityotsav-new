@@ -26,3 +26,13 @@ if(data.code===0){
 }
     return data;
 }
+
+export async function deleteCategory(id:number){
+    const data =  await CategoryModel.deleteCategory(id);
+if(data.code===0){
+    revalidatePath("/admin/categories");
+    revalidatePath("/results");
+
+}
+    return data;
+}
