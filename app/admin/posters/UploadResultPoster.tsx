@@ -29,8 +29,8 @@ function handleFile(e:any){
       img = document.createElement("img");
 
       img.onload = function () {
-        if(img.width!==1500 && img.height!==1500){
-            setError('Image must be 1500x1500 px');
+        if(img.width!==1000 && img.height!==1000){
+            setError('Image must be 1000x1000 px');
         }else{
             setError('');
             setImage(ev[0]);
