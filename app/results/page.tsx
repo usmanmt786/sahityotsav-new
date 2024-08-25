@@ -17,3 +17,5 @@ const Results = async() => {
 }
 
 export default Results;
+
+export const revalidate = 60;
