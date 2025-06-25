@@ -38,4 +38,5 @@ next-env.d.ts
 .env
 /configs.ts
 /prisma/dev.db
+/prisma/prod.db
 /drive/uploads/
