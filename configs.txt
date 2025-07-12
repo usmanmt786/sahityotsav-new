@@ -5,7 +5,7 @@ const APPCONFIGS = {
   venue: "Thalassery",
   venueDates: "August 10, 11, 12",
   domain: "mysite.com",
-  drive: "https://drive.sahityotsav.com/",
+  drive: "http://demo.ziqx.net/",
   style: {
     primaryColor: "#0387D1",
     primaryDark: "#0167B1",

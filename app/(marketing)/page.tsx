@@ -7,10 +7,11 @@ import LiveStream from "./(comps)/LiveStream";
 import BrochureDownload from "./(comps)/BrochureDownload";
 import TeamPoints from "./(comps)/TeamPoints";
 import TeamPointModel from "@/models/teams/teampoint_model";
+import { getTeamPoint } from "../admin/teampoint/func";
 
 const HomePage = async() => {
   const configs = await CoreConfigs.getCoreConfigs();
-  const teamPoint = await TeamPointModel.getAllTeamPoints();
+  const teamPoint = await getTeamPoint()
 
   
   return (

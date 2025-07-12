@@ -88,6 +88,7 @@ model program {
   stageId             Int?
   program_participant program_participant[]
   ytvideo             ytvideo[]
+  result              result[]
 }
 
 model participant {
@@ -150,6 +151,43 @@ model team_point {
   id         Int      @id @default(autoincrement())
   team_id    Int
   point      Int
+  added_at   DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model result {
+  id          Int     @id @default(autoincrement())
+  count       Int     @unique
+  winners     String
+  isPublished Boolean @default(false)
+
+  added_at   DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  program       program        @relation(fields: [programId], references: [id], onDelete: Cascade)
+  advertisement advertisement? @relation(fields: [advertisementId], references: [id], onDelete: SetNull)
+
+  advertisementId Int?
+  programId       Int
+}
+
+model advertisement {
+  id           Int    @id @default(autoincrement())
+  name         String
+  image        String
+  subscription Int
+
+  results result[]
+
+  added_at   DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model team_point_v2 {
+  id         Int      @id @default(autoincrement())
+  after      Int?
+  isFinal    Boolean  @default(false)
+  points     String
   added_at   DateTime @default(now())
   updated_at DateTime @updatedAt
 }

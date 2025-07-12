@@ -2,61 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-.fullcenter{
-    @apply flex flex-col justify-center items-center;
+.fullcenter {
+  @apply flex flex-col justify-center items-center;
 }
 
-.commonwidth{
-    @apply w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto;
+.commonwidth {
+  @apply w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto;
 }
 
-.p-dialog .p-dialog-content:last-of-type{
-    border-radius: 20px !important;
-  }
-  
-  .p-dialog{
-    
-    border: none !important;
-  }
+.p-dialog .p-dialog-content:last-of-type {
+  border-radius: 20px !important;
+}
 
-  .zinput{
-    @apply w-full px-4 py-3 bg-white ring-2 ring-gray-200 rounded-lg outline-none focus:ring-primaryDark disabled:text-black disabled:border-none disabled:rounded-none disabled:p-0 duration-300 disabled:text-xl disabled:font-bold;
-  }
-  
-  .zselect{
-    @apply w-full  bg-white py-1 rounded-lg outline-none ring-2 ring-gray-200 focus:ring-primaryDark disabled:text-black disabled:border-none disabled:rounded-none disabled:p-0 duration-300 disabled:text-xl disabled:font-bold;
-  
-  }
-  .zlabel{
-    @apply text-slate-500 text-sm mt-4;
-  }
-  
-  .submit-btn{
-    @apply shadow-xl hover:shadow-2xl text-white px-8 py-3 rounded-md flex items-center duration-300;
-  }
+.p-dialog {
+  border: none !important;
+}
 
-  .gbg {
-    @apply bg-gbg;  
-    
-  }
+.zinput {
+  @apply w-full px-4 py-3 bg-white ring-2 ring-gray-200 rounded-lg outline-none focus:ring-primaryDark disabled:text-black disabled:border-none disabled:rounded-none disabled:p-0 duration-300 disabled:text-xl disabled:font-bold;
+}
 
-  .outline-btn{
-    @apply py-[0.65rem] px-6 shadow-xl hover:shadow-2xl rounded-md ring-primaryDark text-primaryDark ring-2  hover:text-primary duration-300;
-  }
+.zselect {
+  @apply w-full  bg-white py-1 rounded-lg outline-none ring-2 ring-gray-200 focus:ring-primaryDark disabled:text-black disabled:border-none disabled:rounded-none disabled:p-0 duration-300 disabled:text-xl disabled:font-bold;
+}
+.zlabel {
+  @apply text-slate-500 text-sm mt-4;
+}
 
-  .btn{
-    @apply py-[0.65rem] px-6 shadow-xl hover:shadow-2xl rounded-md ring-primaryDark  ring-2   duration-300;
-  }
+.submit-btn {
+  @apply shadow-xl hover:shadow-2xl text-white px-8 py-3 rounded-md flex items-center duration-300;
+}
 
-  .swal2-container {
-    z-index: 9999 !important;
-  }
+.gbg {
+  @apply bg-gbg;
+}
 
-  .contact-icon{
-    @apply bg-primaryDark text-white h-14 w-14 rounded-lg fullcenter;
-  }
-  .contact{
-    @apply text-2xl flex items-center font-bold text-primaryDark my-2 gap-x-4;
-  }
+.outline-btn {
+  @apply py-[0.65rem] px-6 shadow-xl hover:shadow-2xl rounded-md ring-primaryDark text-primaryDark ring-2  hover:text-primary duration-300;
+}
+
+.btn {
+  @apply py-[0.65rem] px-6 shadow-xl hover:shadow-2xl rounded-md ring-primaryDark  ring-2   duration-300;
+}
+
+.swal2-container {
+  z-index: 9999 !important;
+}
+
+.contact-icon {
+  @apply bg-primaryDark text-white h-14 w-14 rounded-lg fullcenter;
+}
+.contact {
+  @apply text-2xl flex items-center font-bold text-primaryDark my-2 gap-x-4;
+}
+/* Ensure images maintain 1000x200 aspect ratio */
+.ad-image-container {
+  width: 100%;
+  aspect-ratio: 5/1; /* 1000/200 = 5/1 */
+  position: relative;
+}
