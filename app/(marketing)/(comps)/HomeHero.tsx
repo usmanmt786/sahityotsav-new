@@ -4,7 +4,7 @@ import Constants from "@/data/constants";
 
 
 const HomeHero = ({configs}:{configs:any}) => {
-    const imgUrl = configs?.heroBg?.length>3?`${Constants.SITE_IMG_URL}${configs?.heroBg}`:null;
+    const imgUrl = configs?.heroBg?.length>3?`${Constants.DRIVE_URL}${configs?.heroBg}`:null;
 
     const style = imgUrl? {backgroundImage: `url(${imgUrl})`,
     backgroundRepeat: "no-repeat",

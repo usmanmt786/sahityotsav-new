@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import toast from "react-hot-toast";
-import { addAd, updateAd, uploadAdImage } from "./func";
+import { addAd, updateAd } from "./func";
 import Constants from "@/data/constants";
 import { getPreSignedUrl } from "@/drive/drive";
 import { DrivezClient } from "drivez";
@@ -124,7 +124,7 @@ export default function AdForm({
         name: ad.name,
         subscription: ad.subscription,
       });
-      setImagePreview(Constants.DRIVE_URL +  ad.image);
+      setImagePreview(Constants.DRIVE_URL + ad.image);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ad]);

@@ -13,7 +13,7 @@ const Posters = ({ result, posters }: { result: Result; posters: any[] }) => {
       <h1 className="text-2xl mb-6">Posters</h1>
       <section className="grid lg:grid-cols-3 gap-8">
         {posters.map((ps: any) => {
-          const imgUrl = `${Constants.DRIVE_URL}/${ps.file_name}`;
+          const imgUrl = `${Constants.DRIVE_URL}${ps.file_name}`;
           return (
             <div key={ps.id}>
               <SinglePoster

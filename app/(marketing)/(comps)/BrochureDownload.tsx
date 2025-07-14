@@ -12,7 +12,7 @@ const BrochureDownload = ({configs}:{configs:any}) => {
             <p className="text-gray-500">Get all the event details and schedule at your fingertips.</p>
             
             <div className="mt-6">
-            <a href={`${Constants.DRIVE_URL}uploads/site/${configs?.brochure}`}
+            <a href={`${Constants.DRIVE_URL}${configs?.brochure}`}
             target="_blank"
             className="bg-primaryDark text-white px-6 inline-flex text-xs lg:text-base  py-3 rounded-md shadow-xl"
             >

@@ -5,6 +5,7 @@ import { classNames } from "primereact/utils";
 import { useRef } from "react";
 import { Result } from "../admin/results/func";
 import Constants from "@/data/constants";
+import toast from "react-hot-toast";
 
 const SinglePoster = ({
   id,
@@ -148,15 +149,21 @@ const SinglePoster = ({
         <button
           className="btn gbg text-white"
           onClick={async () => {
-            setDownloading(true);
+            try {
+              setDownloading(true);
 
-            await downloadCanvas(
-              posterRef,
-              `${cat} ${programName}`,
-              !!result.advertisement
-            );
-
-            setDownloading(false);
+              await downloadCanvas(
+                posterRef,
+                `${cat} ${programName}`,
+                !!result.advertisement
+              );
+            } catch (error) {
+              toast.error(
+                error instanceof Error ? error.message : "Error downloading"
+              );
+            } finally {
+              setDownloading(false);
+            }
           }}
         >
           Download

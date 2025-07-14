@@ -29,13 +29,25 @@ const TeamPoints = ({
         </div>
       </h1>
       <section className="grid lg:grid-cols-2 gap-8 lg:gap-24">
-        <div className="flex items-center ">
+        <div className="grid place-items-center ">
+          <h2>
+            {!points.isFinal ? (
+              <span className="text-2xl font-bold">
+                After {points.after} Results
+              </span>
+            ) : (
+              <span className="text-2xl font-bold">Final Status</span>
+            )}
+          </h2>
           <section className="w-full">
             {firstThree.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex justify-between items-center text-xl border-b pb-2"
+                  className="flex justify-between items-center text-xl border-b pb-2 "
+                  data-aos="fade-right"
+                  data-aos-delay={`${index * 200}`}
+                  data-aos-duration="500"
                 >
                   <section className="flex items-center">
                     <div className="bg-primaryDark fullcenter rounded-lg my-2 h-10 w-10 font-bold mr-2 text-white">
@@ -55,6 +67,9 @@ const TeamPoints = ({
               <div
                 key={i}
                 className="flex items-center justify-between mb-2 border-white border-b pb-2"
+                data-aos="fade-left"
+                data-aos-delay={`${(i + 3) * 200}`}
+                data-aos-duration="500"
               >
                 <p className="text-lg flex gap-x-2 items-center ">
                   <MdArrowForwardIos className="text-primaryDark" />

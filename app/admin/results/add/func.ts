@@ -1,6 +1,7 @@
 "use server";
 import AdvertisementModel from "@/models/advertisements/advertisement_model";
 import ResultModelV2 from "@/models/results/result_results_v2";
+import { revalidatePath } from "next/cache";
 
 export interface ProgramResult {
   chNo: string;
@@ -46,6 +47,12 @@ export async function addResult(data: ExtractedProgramData, ad?: number) {
     advertisement: ad,
   };
   const resp = await ResultModelV2.createResult(resultData);
+  if (resp) {
+    // Revalidate the results page to show the new result
+    // This is a placeholder, actual revalidation logic may vary
+    revalidatePath("/results");
+    revalidatePath("/admin/results");
+  }
   return resp;
 }
 export async function getActiveAdvertisements() {

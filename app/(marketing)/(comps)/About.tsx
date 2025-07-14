@@ -1,7 +1,7 @@
 import Constants from "@/data/constants";
 
 const HomeAbout = ({configs}:{configs:any}) => {
-    const imgUrl = configs?.aboutImage?.length>3?`${Constants.SITE_IMG_URL}${configs?.aboutImage}`:"/images/logo.svg";
+    const imgUrl = configs?.aboutImage?.length>3?`${Constants.DRIVE_URL}${configs?.aboutImage}`:"/images/logo.svg";
  
  
  const defAbout = `Incepted 30 years ago in 1993, it has its commencement from the grassroot level -that is a family Sahityotsav. Crossing the levels of units,sectors, divisions,districts and 26 states in the country, it finds its actualization in the national level each year.

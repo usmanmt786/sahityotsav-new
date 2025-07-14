@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 const ResultSection = ({configs}:{configs:any}) => {
-  const imgUrl = configs?.resultImage?.length>3?`${Constants.SITE_IMG_URL}${configs?.resultImage}`:"/images/result.png";
+  const imgUrl = configs?.resultImage?.length>3?`${Constants.DRIVE_URL}${configs?.resultImage}`:"/images/result.png";
 
     return (
         <div className="bg-primary text-white ">
