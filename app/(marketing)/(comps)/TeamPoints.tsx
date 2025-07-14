@@ -61,7 +61,7 @@ const TeamPoints = ({
             })}
           </section>
         </div>
-        <div className="bg-primary bg-opacity-10 p-5 rounded-xl ring-2 ring-primary">
+        <div className="bg-primary bg-opacity-10 p-5 rounded-xl ring-2 ring-primary overflow-hidden">
           {remaining.map((item, i) => {
             return (
               <div
