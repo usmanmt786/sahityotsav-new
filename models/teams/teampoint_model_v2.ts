@@ -1,3 +1,4 @@
+import prisma from "@/data/prisma";
 export interface Team {
   team: string;
   points: number;
@@ -13,7 +14,7 @@ export default class TeamPointModelV2 {
     isFinal: boolean
   ) {
     try {
-      const resp = await prisma?.team_point_v2.create({
+      const resp = await prisma.team_point_v2.create({
         data: {
           after,
           points,
@@ -30,7 +31,7 @@ export default class TeamPointModelV2 {
 
   static async getTeamPoint() {
     try {
-      const resp = await prisma?.team_point_v2.findFirst({
+      const resp = await prisma.team_point_v2.findFirst({
         select: {
           id: true,
           after: true,
@@ -49,7 +50,7 @@ export default class TeamPointModelV2 {
   }
   static async deleteTeamPoint(id: number) {
     try {
-      const resp = await prisma?.team_point_v2.deleteMany({
+      const resp = await prisma.team_point_v2.deleteMany({
         where: {
           id,
         },

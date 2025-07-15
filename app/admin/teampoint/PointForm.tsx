@@ -3,8 +3,7 @@
 import { ZFormInput, ZSubmitButton } from "@/components/widgets/Form";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
-import { updateTeamPoint } from "./func";
-import toast from "react-hot-toast";
+
 
 const PointForm = ({curPoints}:{curPoints:any[]}) => {
 
@@ -18,21 +17,21 @@ const PointForm = ({curPoints}:{curPoints:any[]}) => {
             }
             formik.setValues(newMap);
         }
-    }, [curPoints])
+    }, [curPoints,])
     const formik = useFormik({
         initialValues:{
 
         },
         onSubmit:async(val)=>{
-            setLoading(true);
-            const res = await updateTeamPoint(val);
-            if(res){
-                toast.success("Points Updated");
-            }else{
-                toast.error("Something went wrong");
-            }
+            // setLoading(true);
+            // const res = await updateTeamPoint(val);
+            // if(res){
+            //     toast.success("Points Updated");
+            // }else{
+            //     toast.error("Something went wrong");
+            // }
 
-            setLoading(false);
+            // setLoading(false);
 
         }
     })

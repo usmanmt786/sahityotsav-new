@@ -1,6 +1,4 @@
 import prisma from "@/data/prisma";
-import { connect } from "http2";
-
 export interface Result {
   resultCount: number;
   category: string;

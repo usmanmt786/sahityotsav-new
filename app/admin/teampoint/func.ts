@@ -1,6 +1,5 @@
 "use server";
 
-import TeamPointModel from "@/models/teams/teampoint_model";
 import TeamPointModelV2, { Team } from "@/models/teams/teampoint_model_v2";
 import { revalidatePath } from "next/cache";
 
